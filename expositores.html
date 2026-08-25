@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expositores | CIGMA 2026</title>
+
+  <meta
+    name="description"
+    content="Expositores del Congreso Interdisciplinario de Geofísica, Meteorología y Astronomía CIGMA 2026."
+  >
+
+  <style>
+
+    :root {
+      --marron: #612D1B;
+      --turquesa-oscuro: #00505C;
+      --turquesa: #00788F;
+      --crema: #F5F1EA;
+      --blanco: #FFFFFF;
+      --gris: #5E686A;
+      --negro: #183034;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--negro);
+      background: var(--crema);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVEGACIÓN
+    ========================= */
+
+    nav {
+      width: 100%;
+      background: var(--turquesa-oscuro);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 84px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo img {
+      width: 175px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--blanco);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .nav-links .active {
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--blanco);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 105px 0 95px;
+      color: var(--blanco);
+
+      background:
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(0,120,143,0.55),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 5% 100%,
+          rgba(97,45,27,0.75),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #003D47,
+          #00505C 58%,
+          #173A40
+        );
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 7px 14px;
+      margin-bottom: 20px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      margin-bottom: 22px;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #D8EEF0;
+      font-size: 1.1rem;
+    }
+
+    /* =========================
+       FILTROS
+    ========================= */
+
+    .speakers-section {
+      padding: 90px 0 110px;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--turquesa);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      color: var(--turquesa-oscuro);
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: var(--gris);
+      font-size: 1.05rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .filter-button {
+      border: 1px solid #CDD8D8;
+      background: var(--blanco);
+      color: var(--gris);
+
+      padding: 10px 17px;
+      border-radius: 30px;
+
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      background: var(--turquesa-oscuro);
+      color: var(--blanco);
+      border-color: var(--turquesa-oscuro);
+    }
+
+    /* =========================
+       TARJETAS
+    ========================= */
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .speaker-card {
+      background: var(--blanco);
+      border-radius: 12px;
+      overflow: hidden;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+    }
+
+    .speaker-card.hidden {
+      display: none;
+    }
+
+    .speaker-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .speaker-info {
+      padding: 24px;
+    }
+
+    .speaker-area {
+      display: inline-block;
+
+      margin-bottom: 12px;
+      padding: 5px 10px;
+
+      border-radius: 20px;
+
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: var(--blanco);
+    }
+
+    .astronomia {
+      background: var(--turquesa-oscuro);
+    }
+
+    .geofisica {
+      background: var(--marron);
+    }
+
+    .meteorologia {
+      background: var(--turquesa);
+    }
+
+    .especial {
+      background: #455B5F;
+    }
+
+    .speaker-info h3 {
+      color: var(--turquesa-oscuro);
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .speaker-institution {
+      color: var(--gris);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .speaker-talk {
+      color: var(--negro);
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .speaker-more {
+      margin-top: 18px;
+      color: var(--marron);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 1000;
+
+      background: rgba(10, 30, 34, 0.72);
+
+      padding: 30px;
+
+      overflow-y: auto;
+    }
+
+    .modal.open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      width: min(850px, 100%);
+      background: var(--blanco);
+
+      border-radius: 14px;
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+
+      right: 18px;
+      top: 18px;
+
+      width: 42px;
+      height: 42px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.95);
+      color: var(--turquesa-oscuro);
+
+      font-size: 1.3rem;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      z-index: 3;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .modal-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      object-fit: cover;
+    }
+
+    .modal-info {
+      padding: 50px 45px;
+    }
+
+    .modal-info h2 {
+      color: var(--turquesa-oscuro);
+      font-size: 2.2rem;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .modal-institution {
+      color: var(--gris);
+      margin-bottom: 22px;
+    }
+
+    .modal-talk {
+      padding: 18px 0;
+      margin-bottom: 22px;
+
+      border-top: 1px solid #E1E7E6;
+      border-bottom: 1px solid #E1E7E6;
+    }
+
+    .modal-talk span {
+      display: block;
+      color: var(--marron);
+
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
+    }
+
+    .modal-talk strong {
+      color: var(--negro);
+    }
+
+    .modal-bio-title {
+      color: var(--turquesa-oscuro);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-bio {
+      color: var(--gris);
+      font-size: 0.98rem;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .schedule-cta {
+      background: var(--marron);
+      color: var(--blanco);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .schedule-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .schedule-cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #ECDDD7;
+    }
+
+    .schedule-button {
+      display: inline-block;
+      padding: 14px 25px;
+
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 5px;
+
+      font-weight: 800;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #173236;
+      color: var(--blanco);
+      padding: 50px 0 30px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .footer-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      color: #B8C7C9;
+      max-width: 450px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #D8EEF0;
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      color: #8EA2A5;
+      font-size: 0.75rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-photo {
+        height: 330px;
+        min-height: 0;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .speakers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal {
+        padding: 15px;
+      }
+
+      .modal-info {
+        padding: 35px 25px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVEGACIÓN
+  ========================= -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="./index.html" class="logo">
+        <img src="./logo-cigma.png" alt="CIGMA 2026">
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="./index.html">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+        </li>
+
+        <li>
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+        </li>
+
+        <li>
+          <a href="./expositores.html" class="active">
+            Expositores
+          </a>
+        </li>
+
+        <li>
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <span class="hero-label">
+        CIGMA 2026
+      </span>
+
+      <h1>
+        Expositores
+      </h1>
+
+      <p>
+        Conocé a quienes van a compartir sus investigaciones,
+        experiencias y recorridos profesionales durante
+        las tres jornadas de CIGMA.
+      </p>
+
+    </div>
+
+  </header>
+
+  <!-- =========================
+       EXPOSITORES
+  ========================= -->
+
+  <main class="speakers-section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="section-label">
+          QUIÉNES NOS ACOMPAÑAN
+        </div>
+
+        <h2 class="section-title">
+          Ciencia contada por quienes la hacen
+        </h2>
+
+        <p class="section-intro">
+          Explorá los perfiles de nuestros expositores
+          y conocé un poco más sobre sus trayectorias,
+          áreas de trabajo y las charlas que van a compartir
+          en CIGMA 2026.
+        </p>
+
+      </div>
+
+      <!-- FILTROS -->
+
+      <div class="filters">
+
+        <button
+          class="filter-button active"
+          data-filter="todas"
+          type="button"
+        >
+          Todos
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter="astronomia"
+          type="button"
+        >
+          Astronomía
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter="geofisica"
+          type="button"
+        >
+          Geofísica
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter="meteorologia"
+          type="button"
+        >
+          Meteorología
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter="especial"
+          type="button"
+        >
+          Especiales
+        </button>
+
+      </div>
+
+      <!-- TARJETAS -->
+
+      <div class="speakers-grid">
+
+
+        <!-- EJEMPLO 1 -->
+
+        <article
+          class="speaker-card"
+          data-area="geofisica"
+          data-name="Gabriela Badi"
+          data-institution="Institución"
+          data-talk="Sismología volcánica"
+          data-photo="./gabriela-badi.jpg"
+          data-bio="Acá va la descripción de su trayectoria profesional. Podés incluir su formación, área de especialización, institución en la que trabaja, principales líneas de investigación y experiencia profesional."
+        >
+
+          <img
+            src="./gabriela-badi.jpg"
+            alt="Gabriela Badi"
+            class="speaker-photo"
+          >
+
+          <div class="speaker-info">
+
+            <span class="speaker-area geofisica">
+              Geofísica
+            </span>
+
+            <h3>
+              Gabriela Badi
+            </h3>
+
+            <p class="speaker-institution">
+              Institución
+            </p>
+
+            <p class="speaker-talk">
+              Sismología volcánica
+            </p>
+
+            <div class="speaker-more">
+              Conocer trayectoria →
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- EJEMPLO 2 -->
+
+        <article
+          class="speaker-card"
+          data-area="astronomia"
+          data-name="Florencia Vieyro"
+          data-institution="Institución"
+          data-talk="Agujeros negros"
+          data-photo="./florencia-vieyro.jpg"
+          data-bio="Acá va la trayectoria profesional de Florencia. Este texto después se puede reemplazar por la biografía real que te envíe la expositora."
+        >
+
+          <img
+            src="./florencia-vieyro.jpg"
+            alt="Florencia Vieyro"
+            class="speaker-photo"
+          >
+
+          <div class="speaker-info">
+
+            <span class="speaker-area astronomia">
+              Astronomía
+            </span>
+
+            <h3>
+              Florencia Vieyro
+            </h3>
+
+            <p class="speaker-institution">
+              Institución
+            </p>
+
+            <p class="speaker-talk">
+              Agujeros negros
+            </p>
+
+            <div class="speaker-more">
+              Conocer trayectoria →
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- EJEMPLO 3 -->
+
+        <article
+          class="speaker-card"
+          data-area="meteorologia"
+          data-name="Sergio Jalfin"
+          data-institution="Institución"
+          data-talk="IA y sus aplicaciones en la meteorología"
+          data-photo="./sergio-jalfin.jpg"
+          data-bio="Acá va la descripción de su trayectoria, formación y experiencia profesional."
+        >
+
+          <img
+            src="./sergio-jalfin.jpg"
+            alt="Sergio Jalfin"
+            class="speaker-photo"
+          >
+
+          <div class="speaker-info">
+
+            <span class="speaker-area meteorologia">
+              Meteorología
+            </span>
+
+            <h3>
+              Sergio Jalfin
+            </h3>
+
+            <p class="speaker-institution">
+              Institución
+            </p>
+
+            <p class="speaker-talk">
+              IA y sus aplicaciones en la meteorología
+            </p>
+
+            <div class="speaker-more">
+              Conocer trayectoria →
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- =========================
+       CRONOGRAMA
+  ========================= -->
+
+  <section class="schedule-cta">
+
+    <div class="container">
+
+      <h2>
+        ¿Querés saber cuándo participan?
+      </h2>
+
+      <p>
+        Consultá el cronograma completo y encontrá
+        el día y horario de cada exposición.
+      </p>
+
+      <a
+        href="./cronograma.html"
+        class="schedule-button"
+      >
+        VER CRONOGRAMA →
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+
+          <div class="footer-title">
+            CIGMA 2026
+          </div>
+
+          <p class="footer-text">
+            Congreso Interdisciplinario de Geofísica,
+            Meteorología y Astronomía.
+          </p>
+
+        </div>
+
+        <div class="footer-links">
+
+          <a href="./index.html">
+            Inicio
+          </a>
+
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+
+          <a href="./expositores.html">
+            Expositores
+          </a>
+
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 CIGMA · Planetario FCAG – UNLP
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MODAL DEL EXPOSITOR
+  ========================= -->
+
+  <div
+    class="modal"
+    id="speaker-modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        id="modal-close"
+        type="button"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <img
+          src=""
+          alt=""
+          class="modal-photo"
+          id="modal-photo"
+        >
+
+        <div class="modal-info">
+
+          <span
+            class="speaker-area"
+            id="modal-area"
+          ></span>
+
+          <h2 id="modal-name"></h2>
+
+          <p
+            class="modal-institution"
+            id="modal-institution"
+          ></p>
+
+          <div class="modal-talk">
+
+            <span>
+              CHARLA EN CIGMA
+            </span>
+
+            <strong id="modal-talk"></strong>
+
+          </div>
+
+          <h3 class="modal-bio-title">
+            Trayectoria profesional
+          </h3>
+
+          <p
+            class="modal-bio"
+            id="modal-bio"
+          ></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const cards =
+      document.querySelectorAll(".speaker-card");
+
+    const filterButtons =
+      document.querySelectorAll(".filter-button");
+
+    const modal =
+      document.getElementById("speaker-modal");
+
+    const closeModalButton =
+      document.getElementById("modal-close");
+
+
+    cards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        const area =
+          card.dataset.area;
+
+        const name =
+          card.dataset.name;
+
+        const institution =
+          card.dataset.institution;
+
+        const talk =
+          card.dataset.talk;
+
+        const photo =
+          card.dataset.photo;
+
+        const bio =
+          card.dataset.bio;
+
+
+        const modalArea =
+          document.getElementById("modal-area");
+
+
+        modalArea.textContent =
+          area.charAt(0).toUpperCase() +
+          area.slice(1);
+
+
+        modalArea.className =
+          "speaker-area " + area;
+
+
+        document.getElementById(
+          "modal-name"
+        ).textContent =
+          name;
+
+
+        document.getElementById(
+          "modal-institution"
+        ).textContent =
+          institution;
+
+
+        document.getElementById(
+          "modal-talk"
+        ).textContent =
+          talk;
+
+
+        document.getElementById(
+          "modal-bio"
+        ).textContent =
+          bio;
+
+
+        const modalPhoto =
+          document.getElementById(
+            "modal-photo"
+          );
+
+
+        modalPhoto.src =
+          photo;
+
+
+        modalPhoto.alt =
+          name;
+
+
+        modal.classList.add("open");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+      });
+
+    });
+
+
+    function closeModal() {
+
+      modal.classList.remove("open");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+    }
+
+
+    closeModalButton.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    modal.addEventListener(
+      "click",
+      event => {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const filter =
+          button.dataset.filter;
+
+
+        filterButtons.forEach(other => {
+
+          other.classList.remove(
+            "active"
+          );
+
+        });
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        cards.forEach(card => {
+
+          const area =
+            card.dataset.area;
+
+
+          if (
+            filter === "todas" ||
+            area === filter
+          ) {
+
+            card.classList.remove(
+              "hidden"
+            );
+
+          }
+
+          else {
+
+            card.classList.add(
+              "hidden"
+            );
+
+          }
+
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
