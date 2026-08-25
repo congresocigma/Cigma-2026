@@ -29,6 +29,7 @@
       --negro: #183034;
     }
 
+
     /* =========================================
        GENERAL
     ========================================= */
@@ -56,9 +57,10 @@
     }
 
     .container {
-      width: min(1150px, 90%);
+      width: min(1180px, 92%);
       margin: 0 auto;
     }
+
 
     /* =========================================
        NAVEGACIÓN
@@ -90,6 +92,7 @@
     .logo {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .logo img {
@@ -102,11 +105,13 @@
       display: flex;
       align-items: center;
       gap: 27px;
+
       list-style: none;
     }
 
     .nav-links a {
       color: var(--blanco);
+
       font-size: 0.88rem;
       font-weight: 700;
 
@@ -121,6 +126,7 @@
       padding-bottom: 6px;
       border-bottom: 2px solid var(--blanco);
     }
+
 
     /* =========================================
        HERO
@@ -208,21 +214,22 @@
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
 
       color: #D8EEF0;
 
       font-size: 1.1rem;
     }
 
+
     /* =========================================
-       PRESENTACIÓN
+       INTRODUCCIÓN
     ========================================= */
 
     .intro-section {
       background: var(--blanco);
 
-      padding: 95px 0 70px;
+      padding: 95px 0 75px;
     }
 
     .intro-content {
@@ -246,7 +253,6 @@
       color: var(--turquesa-oscuro);
 
       font-size: clamp(2rem, 4vw, 3.3rem);
-
       line-height: 1.1;
 
       margin-bottom: 22px;
@@ -264,17 +270,71 @@
       color: var(--turquesa-oscuro);
     }
 
+
     /* =========================================
-       COMITÉ
+       ÁREAS
     ========================================= */
 
-    .committee-section {
-      background: var(--crema);
-
-      padding: 60px 0 110px;
+    .area-section {
+      padding: 90px 0;
     }
 
-    .committee-grid {
+    .area-section:nth-of-type(even) {
+      background: var(--crema);
+    }
+
+    .area-section:nth-of-type(odd) {
+      background: var(--blanco);
+    }
+
+    .area-header {
+      margin-bottom: 40px;
+    }
+
+    .area-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      margin-bottom: 10px;
+    }
+
+    .area-line {
+      width: 45px;
+      height: 4px;
+      border-radius: 5px;
+    }
+
+    .line-geofisica {
+      background: var(--marron);
+    }
+
+    .line-meteorologia {
+      background: var(--turquesa);
+    }
+
+    .line-astronomia {
+      background: var(--turquesa-oscuro);
+    }
+
+    .area-title h2 {
+      color: var(--turquesa-oscuro);
+
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .area-description {
+      max-width: 650px;
+
+      color: var(--gris);
+    }
+
+
+    /* =========================================
+       PERSONAS
+    ========================================= */
+
+    .members-grid {
       display: grid;
 
       grid-template-columns: repeat(3, 1fr);
@@ -282,97 +342,108 @@
       gap: 28px;
     }
 
-    .discipline-card {
+    .members-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 360px));
+    }
+
+    .member-card {
       background: var(--blanco);
 
       border-radius: 12px;
 
       overflow: hidden;
 
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
 
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
     }
 
-    .discipline-card:hover {
-      transform: translateY(-5px);
+    .member-card:hover {
+      transform: translateY(-6px);
 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.11);
     }
 
-    .discipline-header {
-      color: var(--blanco);
+    .member-photo-wrapper {
+      position: relative;
 
-      padding: 32px 30px;
+      overflow: hidden;
+
+      aspect-ratio: 4 / 4.5;
+
+      background: #DDE5E4;
     }
 
-    .geofisica-header {
-      background: var(--marron);
-    }
+    .member-photo {
+      width: 100%;
+      height: 100%;
 
-    .meteorologia-header {
-      background: var(--turquesa);
-    }
-
-    .astronomia-header {
-      background: var(--turquesa-oscuro);
-    }
-
-    .discipline-header span {
       display: block;
 
-      font-size: 0.7rem;
-      font-weight: 800;
+      object-fit: cover;
 
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      opacity: 0.78;
-
-      margin-bottom: 8px;
+      transition: transform 0.4s ease;
     }
 
-    .discipline-header h2 {
-      font-size: 1.8rem;
-      line-height: 1.1;
+    .member-card:hover .member-photo {
+      transform: scale(1.03);
     }
 
-    .members {
-      padding: 12px 30px 28px;
-    }
-
-    .member {
-      padding: 21px 0;
-
-      border-bottom: 1px solid #E3E8E7;
-    }
-
-    .member:last-child {
-      border-bottom: none;
-    }
-
-    .member-name {
-      color: var(--negro);
-
-      font-size: 1.08rem;
-      font-weight: 800;
+    .member-info {
+      padding: 24px 24px 26px;
     }
 
     .member-area {
-      display: block;
+      display: inline-block;
 
-      margin-top: 3px;
+      margin-bottom: 11px;
 
-      color: var(--gris);
+      padding: 5px 10px;
 
-      font-size: 0.82rem;
+      border-radius: 20px;
+
+      color: var(--blanco);
+
+      font-size: 0.67rem;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
+    .tag-geofisica {
+      background: var(--marron);
+    }
+
+    .tag-meteorologia {
+      background: var(--turquesa);
+    }
+
+    .tag-astronomia {
+      background: var(--turquesa-oscuro);
+    }
+
+    .member-info h3 {
+      color: var(--turquesa-oscuro);
+
+      font-size: 1.3rem;
+
+      line-height: 1.2;
+    }
+
+    .member-role {
+      color: var(--gris);
+
+      font-size: 0.88rem;
+
+      margin-top: 5px;
+    }
+
+
     /* =========================================
-       MENSAJE
+       MENSAJE FINAL
     ========================================= */
 
     .closing-section {
@@ -380,7 +451,7 @@
 
       color: var(--blanco);
 
-      padding: 95px 0;
+      padding: 100px 0;
 
       text-align: center;
     }
@@ -388,12 +459,11 @@
     .closing-content {
       max-width: 760px;
 
-      margin: 0 auto;
+      margin: auto;
     }
 
     .closing-content h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-
+      font-size: clamp(2rem, 4vw, 3.4rem);
       line-height: 1.1;
 
       margin-bottom: 20px;
@@ -405,6 +475,7 @@
       font-size: 1.05rem;
     }
 
+
     /* =========================================
        CONTACTO
     ========================================= */
@@ -414,7 +485,7 @@
 
       color: var(--blanco);
 
-      padding: 70px 0;
+      padding: 75px 0;
     }
 
     .contact-content {
@@ -428,17 +499,17 @@
       flex-wrap: wrap;
     }
 
-    .contact-content h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+    .contact-text h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
 
       margin-bottom: 8px;
     }
 
-    .contact-content p {
+    .contact-text p {
       color: #ECDDD7;
     }
 
-    .contact-links {
+    .contact-buttons {
       display: flex;
 
       gap: 12px;
@@ -449,20 +520,25 @@
     .contact-button {
       display: inline-block;
 
-      padding: 12px 20px;
+      padding: 13px 21px;
 
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 6px;
 
-      border-radius: 5px;
+      color: var(--blanco);
 
       font-weight: 800;
 
-      transition: background 0.2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .contact-button:hover {
       background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
     }
+
 
     /* =========================================
        FOOTER
@@ -529,14 +605,16 @@
       font-size: 0.75rem;
     }
 
+
     /* =========================================
        RESPONSIVE
     ========================================= */
 
     @media (max-width: 900px) {
 
-      .committee-grid {
-        grid-template-columns: 1fr;
+      .members-grid,
+      .members-grid.two {
+        grid-template-columns: repeat(2, 1fr);
       }
 
     }
@@ -555,21 +633,20 @@
         padding: 75px 0;
       }
 
-      .intro-section {
-        padding: 75px 0 50px;
-      }
-
-      .committee-section {
-        padding: 40px 0 80px;
-      }
-
+      .intro-section,
+      .area-section,
       .closing-section {
-        padding: 75px 0;
+        padding: 70px 0;
+      }
+
+      .members-grid,
+      .members-grid.two {
+        grid-template-columns: 1fr;
       }
 
       .contact-content {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
     }
@@ -578,7 +655,9 @@
 
 </head>
 
+
 <body>
+
 
   <!-- =========================================
        NAVEGACIÓN
@@ -596,6 +675,7 @@
         >
 
       </a>
+
 
       <ul class="nav-links">
 
@@ -638,8 +718,9 @@
 
   </nav>
 
+
   <!-- =========================================
-       HERO
+       PORTADA
   ========================================== -->
 
   <header class="hero">
@@ -657,9 +738,12 @@
         </h1>
 
         <p>
-          Detrás de CIGMA hay estudiantes de Geofísica,
-          Meteorología y Astronomía que trabajan de manera
-          conjunta para construir este espacio de encuentro.
+
+          Detrás de CIGMA hay estudiantes de
+          Geofísica, Meteorología y Astronomía
+          trabajando de manera conjunta para construir
+          este espacio de encuentro, intercambio y ciencia.
+
         </p>
 
       </div>
@@ -668,8 +752,9 @@
 
   </header>
 
+
   <!-- =========================================
-       INTRODUCCIÓN
+       PRESENTACIÓN
   ========================================== -->
 
   <section class="intro-section">
@@ -687,17 +772,22 @@
         </h2>
 
         <p>
+
           <strong>CIGMA nace como una iniciativa estudiantil</strong>
-          con la intención de generar un espacio de encuentro entre
-          distintas disciplinas de las Ciencias de la Tierra y el Espacio.
+          con el objetivo de generar un espacio de encuentro
+          entre distintas disciplinas de las Ciencias
+          de la Tierra y el Espacio.
+
         </p>
 
         <p>
-          La organización reúne estudiantes de
-          <strong>Geofísica, Meteorología y Astronomía</strong>,
-          que trabajan de manera colectiva en la planificación,
-          coordinación y desarrollo de las distintas actividades
+
+          El Comité Organizador está integrado por estudiantes
+          de <strong>Geofísica, Meteorología y Astronomía</strong>,
+          que trabajan colectivamente en la planificación,
+          organización y desarrollo de las distintas actividades
           que forman parte del congreso.
+
         </p>
 
       </div>
@@ -706,177 +796,135 @@
 
   </section>
 
+
   <!-- =========================================
-       INTEGRANTES
+       GEOFÍSICA
   ========================================== -->
 
-  <section class="committee-section">
+  <section class="area-section">
 
     <div class="container">
 
-      <div class="committee-grid">
+      <div class="area-header">
 
-        <!-- GEOFÍSICA -->
+        <div class="section-label">
+          COMITÉ ORGANIZADOR
+        </div>
 
-        <article class="discipline-card">
+        <div class="area-title">
 
-          <div class="discipline-header geofisica-header">
+          <span class="area-line line-geofisica"></span>
 
-            <span>
-              Comité Organizador
-            </span>
+          <h2>
+            Geofísica
+          </h2>
 
-            <h2>
+        </div>
+
+      </div>
+
+
+      <div class="members-grid">
+
+
+        <!-- MAGALÍ -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./magali-schmitz.jpg"
+              alt="Magalí Schmitz"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-geofisica">
               Geofísica
-            </h2>
-
-          </div>
-
-          <div class="members">
-
-            <div class="member">
-
-              <div class="member-name">
-                Magalí Schmitz
-              </div>
-
-              <span class="member-area">
-                Geofísica
-              </span>
-
-            </div>
-
-            <div class="member">
-
-              <div class="member-name">
-                Matías Terpollili
-              </div>
-
-              <span class="member-area">
-                Geofísica
-              </span>
-
-            </div>
-
-            <div class="member">
-
-              <div class="member-name">
-                Mía Moyano
-              </div>
-
-              <span class="member-area">
-                Geofísica
-              </span>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- METEOROLOGÍA -->
-
-        <article class="discipline-card">
-
-          <div class="discipline-header meteorologia-header">
-
-            <span>
-              Comité Organizador
             </span>
 
-            <h2>
-              Meteorología
-            </h2>
+            <h3>
+              Magalí Schmitz
+            </h3>
 
-          </div>
-
-          <div class="members">
-
-            <div class="member">
-
-              <div class="member-name">
-                Uriel Vilaró
-              </div>
-
-              <span class="member-area">
-                Meteorología
-              </span>
-
-            </div>
-
-            <div class="member">
-
-              <div class="member-name">
-                Delfina Barranquero
-              </div>
-
-              <span class="member-area">
-                Meteorología
-              </span>
-
-            </div>
-
-            <div class="member">
-
-              <div class="member-name">
-                Julieta Montefiori
-              </div>
-
-              <span class="member-area">
-                Meteorología
-              </span>
-
-            </div>
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
 
           </div>
 
         </article>
 
-        <!-- ASTRONOMÍA -->
 
-        <article class="discipline-card">
+        <!-- MATÍAS -->
 
-          <div class="discipline-header astronomia-header">
+        <article class="member-card">
 
-            <span>
-              Comité Organizador
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./matias-terpollili.jpg"
+              alt="Matías Terpollili"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-geofisica">
+              Geofísica
             </span>
 
-            <h2>
-              Astronomía
-            </h2>
+            <h3>
+              Matías Terpollili
+            </h3>
 
-          </div>
-
-          <div class="members">
-
-            <div class="member">
-
-              <div class="member-name">
-                Tomás Cabrera
-              </div>
-
-              <span class="member-area">
-                Astronomía
-              </span>
-
-            </div>
-
-            <div class="member">
-
-              <div class="member-name">
-                Juan Francisco Gómez
-              </div>
-
-              <span class="member-area">
-                Astronomía
-              </span>
-
-            </div>
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
 
           </div>
 
         </article>
+
+
+        <!-- MÍA -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./mia-moyano.jpg"
+              alt="Mía Moyano"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-geofisica">
+              Geofísica
+            </span>
+
+            <h3>
+              Mía Moyano
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
 
       </div>
 
@@ -884,8 +932,248 @@
 
   </section>
 
+
   <!-- =========================================
-       MENSAJE FINAL
+       METEOROLOGÍA
+  ========================================== -->
+
+  <section class="area-section">
+
+    <div class="container">
+
+      <div class="area-header">
+
+        <div class="section-label">
+          COMITÉ ORGANIZADOR
+        </div>
+
+        <div class="area-title">
+
+          <span class="area-line line-meteorologia"></span>
+
+          <h2>
+            Meteorología
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="members-grid">
+
+
+        <!-- URIEL -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./uriel-vilaro.jpg"
+              alt="Uriel Vilaró"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h3>
+              Uriel Vilaró
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- DELFINA -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./delfina-barranquero.jpg"
+              alt="Delfina Barranquero"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h3>
+              Delfina Barranquero
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- JULIETA -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./julieta-montefiori.jpg"
+              alt="Julieta Montefiori"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h3>
+              Julieta Montefiori
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       ASTRONOMÍA
+  ========================================== -->
+
+  <section class="area-section">
+
+    <div class="container">
+
+      <div class="area-header">
+
+        <div class="section-label">
+          COMITÉ ORGANIZADOR
+        </div>
+
+        <div class="area-title">
+
+          <span class="area-line line-astronomia"></span>
+
+          <h2>
+            Astronomía
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="members-grid two">
+
+
+        <!-- TOMÁS -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./tomas-cabrera.jpg"
+              alt="Tomás Cabrera"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-astronomia">
+              Astronomía
+            </span>
+
+            <h3>
+              Tomás Cabrera
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- JUAN FRANCISCO -->
+
+        <article class="member-card">
+
+          <div class="member-photo-wrapper">
+
+            <img
+              src="./juan-francisco-gomez.jpg"
+              alt="Juan Francisco Gómez"
+              class="member-photo"
+            >
+
+          </div>
+
+          <div class="member-info">
+
+            <span class="member-area tag-astronomia">
+              Astronomía
+            </span>
+
+            <h3>
+              Juan Francisco Gómez
+            </h3>
+
+            <p class="member-role">
+              Comité Organizador · CIGMA 2026
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CIERRE
   ========================================== -->
 
   <section class="closing-section">
@@ -899,9 +1187,11 @@
         </h2>
 
         <p>
+
           CIGMA se construye desde el trabajo colectivo,
           el intercambio de ideas y las ganas de generar
-          nuevos espacios para nuestra comunidad.
+          nuevos espacios para nuestra comunidad científica.
+
         </p>
 
       </div>
@@ -909,6 +1199,7 @@
     </div>
 
   </section>
+
 
   <!-- =========================================
        CONTACTO
@@ -920,26 +1211,28 @@
 
       <div class="contact-content">
 
-        <div>
+
+        <div class="contact-text">
 
           <h2>
             ¿Querés contactarnos?
           </h2>
 
           <p>
-            Escribinos o seguí las novedades de CIGMA
-            en nuestras redes.
+            Escribinos o seguí todas las novedades
+            de CIGMA en nuestras redes.
           </p>
 
         </div>
 
-        <div class="contact-links">
+
+        <div class="contact-buttons">
 
           <a
-            href="mailto:congreso.cigma@presi.unlp.edu.ar"
+            href="mailto:congresocigma@gmail.com"
             class="contact-button"
           >
-            EMAIL
+            ✉ congresocigma@gmail.com
           </a>
 
           <a
@@ -948,16 +1241,18 @@
             rel="noopener noreferrer"
             class="contact-button"
           >
-            INSTAGRAM
+            ◎ @congresocigma
           </a>
 
         </div>
+
 
       </div>
 
     </div>
 
   </section>
+
 
   <!-- =========================================
        FOOTER
@@ -967,7 +1262,9 @@
 
     <div class="container">
 
+
       <div class="footer-content">
+
 
         <div>
 
@@ -976,11 +1273,14 @@
           </div>
 
           <p class="footer-text">
+
             Congreso Interdisciplinario de Geofísica,
             Meteorología y Astronomía.
+
           </p>
 
         </div>
+
 
         <div class="footer-links">
 
@@ -1006,15 +1306,21 @@
 
         </div>
 
+
       </div>
 
+
       <div class="copyright">
+
         © 2026 CIGMA · Planetario FCAG – UNLP
+
       </div>
+
 
     </div>
 
   </footer>
+
 
 </body>
 
