@@ -12,9 +12,10 @@
   >
 
   <style>
-    /* ==============================
+
+    /* =========================================
        COLORES CIGMA
-    ============================== */
+    ========================================= */
 
     :root {
       --marron: #612D1B;
@@ -26,9 +27,10 @@
       --negro: #183034;
     }
 
-    /* ==============================
+
+    /* =========================================
        CONFIGURACIÓN GENERAL
-    ============================== */
+    ========================================= */
 
     * {
       margin: 0;
@@ -57,9 +59,10 @@
       margin: 0 auto;
     }
 
-    /* ==============================
+
+    /* =========================================
        NAVEGACIÓN
-    ============================== */
+    ========================================= */
 
     nav {
       position: absolute;
@@ -67,23 +70,35 @@
       left: 0;
       width: 100%;
       z-index: 10;
-      padding: 24px 0;
+      padding: 18px 0;
     }
 
     .nav-container {
       width: min(1200px, 90%);
       margin: auto;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo-text {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--blanco);
+
+    /* LOGO */
+
+    .logo {
+      display: flex;
+      align-items: center;
     }
+
+    .logo img {
+      height: 65px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+
+    /* MENÚ */
 
     .nav-links {
       display: flex;
@@ -102,473 +117,727 @@
       color: #B7E1E5;
     }
 
-    /* ==============================
+
+    /* =========================================
        HERO
-    ============================== */
+    ========================================= */
 
     .hero {
       min-height: 780px;
+
       position: relative;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
 
       background:
-        radial-gradient(circle at 82% 20%, rgba(0, 120, 143, 0.55), transparent 28%),
-        radial-gradient(circle at 15% 80%, rgba(97, 45, 27, 0.65), transparent 30%),
-        linear-gradient(135deg, #003D47 0%, #00505C 50%, #183E43 100%);
+        radial-gradient(
+          circle at 82% 20%,
+          rgba(0, 120, 143, 0.55),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(97, 45, 27, 0.65),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #003D47 0%,
+          #00505C 50%,
+          #183E43 100%
+        );
     }
 
-    /* Líneas decorativas */
+
+    /* CÍRCULOS DECORATIVOS */
 
     .hero::before {
       content: "";
+
       position: absolute;
+
       width: 750px;
       height: 750px;
+
       right: -250px;
       top: -250px;
+
       border: 1px solid rgba(255,255,255,0.15);
+
       border-radius: 50%;
+
       box-shadow:
         0 0 0 70px rgba(255,255,255,0.025),
         0 0 0 140px rgba(255,255,255,0.025),
         0 0 0 210px rgba(255,255,255,0.025);
     }
 
+
     .hero::after {
       content: "";
+
       position: absolute;
+
       width: 500px;
       height: 200px;
+
       left: -120px;
       bottom: 50px;
+
       border-top: 1px solid rgba(255,255,255,0.15);
+
       border-radius: 50%;
+
       transform: rotate(-12deg);
     }
+
+
+    /* CONTENIDO DEL HERO */
 
     .hero-content {
       position: relative;
       z-index: 2;
+
       max-width: 850px;
+
       color: var(--blanco);
+
       padding-top: 80px;
     }
 
+
     .eyebrow {
       display: inline-block;
+
       padding: 8px 15px;
+
       border: 1px solid rgba(255,255,255,0.35);
+
       border-radius: 30px;
+
       font-size: 0.8rem;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       margin-bottom: 25px;
     }
+
 
     .hero h1 {
       font-size: clamp(4rem, 10vw, 8rem);
+
       line-height: 0.85;
+
       letter-spacing: -5px;
+
       margin-bottom: 25px;
+
       font-weight: 900;
     }
 
+
     .hero-subtitle {
       font-size: clamp(1.2rem, 2vw, 1.7rem);
+
       max-width: 760px;
+
       margin-bottom: 25px;
+
       font-weight: 400;
     }
 
+
     .identity {
       font-size: 1.2rem;
+
       font-style: italic;
+
       max-width: 700px;
+
       margin-bottom: 35px;
+
       color: #D8EEF0;
     }
 
+
+    /* INFORMACIÓN DEL EVENTO */
+
     .event-info {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 12px;
+
       margin-bottom: 35px;
     }
 
+
     .info-pill {
       padding: 10px 16px;
+
       background: rgba(255,255,255,0.1);
+
       border: 1px solid rgba(255,255,255,0.2);
+
       border-radius: 30px;
+
       font-size: 0.95rem;
     }
 
+
+    /* BOTONES */
+
     .buttons {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 14px;
     }
 
+
     .button {
       display: inline-block;
+
       padding: 14px 25px;
+
       border-radius: 5px;
+
       font-weight: 700;
+
       transition: 0.3s;
     }
 
+
     .button-primary {
       background: var(--blanco);
+
       color: var(--turquesa-oscuro);
     }
 
+
     .button-primary:hover {
       transform: translateY(-2px);
+
       background: #E6F4F5;
     }
 
+
     .button-outline {
       border: 1px solid rgba(255,255,255,0.55);
+
       color: var(--blanco);
     }
+
 
     .button-outline:hover {
       background: rgba(255,255,255,0.1);
     }
 
-    /* ==============================
+
+    /* =========================================
        CONTADOR
-    ============================== */
+    ========================================= */
 
     .countdown-section {
       background: var(--marron);
+
       color: var(--blanco);
+
       padding: 55px 0;
+
       text-align: center;
     }
 
+
     .countdown-title {
       text-transform: uppercase;
+
       letter-spacing: 3px;
+
       font-size: 0.85rem;
+
       margin-bottom: 20px;
+
       opacity: 0.8;
     }
+
 
     .countdown {
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 15px;
     }
 
+
     .time-box {
       min-width: 105px;
+
       padding: 15px 20px;
+
       border: 1px solid rgba(255,255,255,0.25);
+
       border-radius: 8px;
+
       background: rgba(255,255,255,0.06);
     }
 
+
     .time-number {
       display: block;
+
       font-size: 2.3rem;
+
       font-weight: 800;
     }
 
+
     .time-label {
       font-size: 0.7rem;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       opacity: 0.8;
     }
 
-    /* ==============================
+
+    /* =========================================
        SECCIONES
-    ============================== */
+    ========================================= */
 
     section.content-section {
       padding: 100px 0;
     }
 
+
     .section-header {
-      max-width: 750px;
+      max-width: 800px;
+
       margin-bottom: 55px;
     }
 
+
     .section-label {
       color: var(--turquesa);
+
       text-transform: uppercase;
+
       letter-spacing: 3px;
+
       font-size: 0.75rem;
+
       font-weight: 800;
+
       margin-bottom: 12px;
     }
 
+
     .section-title {
       color: var(--turquesa-oscuro);
+
       font-size: clamp(2rem, 4vw, 3.3rem);
+
       line-height: 1.1;
+
       margin-bottom: 20px;
     }
 
+
     .section-intro {
       font-size: 1.05rem;
+
       color: var(--gris);
     }
 
-    /* ==============================
+
+    /* =========================================
        ¿QUÉ ES CIGMA?
-    ============================== */
+    ========================================= */
 
     .about {
       background: var(--blanco);
     }
 
+
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns: 1.2fr 0.8fr;
+
       gap: 70px;
+
       align-items: center;
     }
 
+
     .about-text p {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+
       font-size: 1.05rem;
     }
 
+
+    .about-text strong {
+      color: var(--turquesa-oscuro);
+    }
+
+
     .quote-box {
       background: var(--turquesa-oscuro);
+
       color: var(--blanco);
+
       padding: 50px;
+
       border-radius: 4px;
+
       position: relative;
+
       overflow: hidden;
     }
 
+
     .quote-box::before {
       content: "CIGMA";
+
       position: absolute;
+
       font-size: 6rem;
+
       font-weight: 900;
+
       opacity: 0.05;
+
       right: -15px;
+
       bottom: -10px;
     }
 
+
     .quote-box p {
       font-size: 1.45rem;
+
       line-height: 1.4;
+
       font-style: italic;
+
       position: relative;
     }
 
-    /* ==============================
-       QUÉ ENCONTRAR
-    ============================== */
+
+    /* =========================================
+       QUÉ VAS A ENCONTRAR
+    ========================================= */
 
     .find-section {
       background: var(--crema);
     }
 
+
     .cards {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 22px;
     }
 
+
     .card {
       background: var(--blanco);
+
       padding: 35px;
+
       border-radius: 5px;
+
       border-top: 4px solid var(--turquesa);
+
       transition: 0.3s;
     }
 
+
     .card:hover {
       transform: translateY(-5px);
+
       box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     }
 
+
     .card-number {
       font-size: 0.75rem;
+
       font-weight: 800;
+
       color: var(--marron);
+
       letter-spacing: 2px;
+
       margin-bottom: 20px;
     }
 
+
     .card h3 {
       color: var(--turquesa-oscuro);
+
       margin-bottom: 12px;
+
       font-size: 1.3rem;
     }
 
+
     .card p {
       color: var(--gris);
+
       font-size: 0.95rem;
     }
 
-    /* ==============================
+
+    /* =========================================
        TRES JORNADAS
-    ============================== */
+    ========================================= */
 
     .days-section {
       background: var(--blanco);
     }
 
+
     .days {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 20px;
     }
 
+
     .day {
       padding: 40px 30px;
+
       min-height: 290px;
+
       border-radius: 5px;
+
       color: var(--blanco);
+
       position: relative;
+
       overflow: hidden;
     }
 
+
     .day::after {
       content: "";
+
       position: absolute;
+
       width: 220px;
       height: 220px;
+
       border: 1px solid rgba(255,255,255,0.15);
+
       border-radius: 50%;
+
       right: -80px;
       bottom: -80px;
     }
+
 
     .day-1 {
       background: var(--turquesa-oscuro);
     }
 
+
     .day-2 {
       background: var(--turquesa);
     }
+
 
     .day-3 {
       background: var(--marron);
     }
 
+
     .day-date {
       font-size: 0.8rem;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       opacity: 0.75;
+
       margin-bottom: 20px;
     }
 
+
     .day h3 {
       font-size: 1.8rem;
+
       margin-bottom: 12px;
     }
 
+
     .day p {
       opacity: 0.9;
+
       font-size: 0.95rem;
     }
 
+
     .day-tag {
       display: inline-block;
+
       margin-top: 25px;
+
       padding: 7px 12px;
+
       border: 1px solid rgba(255,255,255,0.3);
+
       border-radius: 20px;
+
       font-size: 0.7rem;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
-    /* ==============================
+
+    /* =========================================
        INSCRIPCIÓN
-    ============================== */
+    ========================================= */
 
     .registration {
       background:
-        linear-gradient(rgba(0,80,92,0.94), rgba(0,80,92,0.94)),
+        linear-gradient(
+          rgba(0,80,92,0.94),
+          rgba(0,80,92,0.94)
+        ),
         var(--turquesa-oscuro);
+
       color: var(--blanco);
+
       text-align: center;
     }
+
 
     .registration .section-title {
       color: var(--blanco);
     }
 
+
     .registration .section-intro {
       color: #D8EEF0;
+
       margin: 0 auto 30px;
+
       max-width: 650px;
     }
 
+
     .free-badge {
       display: inline-block;
+
       background: var(--marron);
+
       padding: 12px 22px;
+
       border-radius: 30px;
+
       font-weight: 800;
+
       margin-bottom: 25px;
     }
 
-    /* ==============================
+
+    /* =========================================
        FOOTER
-    ============================== */
+    ========================================= */
 
     footer {
       background: #173236;
+
       color: var(--blanco);
+
       padding: 50px 0 30px;
     }
 
+
     .footer-content {
       display: flex;
+
       justify-content: space-between;
+
       gap: 30px;
+
       flex-wrap: wrap;
+
       margin-bottom: 35px;
     }
 
+
     .footer-title {
       font-size: 1.4rem;
+
       font-weight: 800;
+
       letter-spacing: 2px;
+
       margin-bottom: 10px;
     }
 
+
     .footer-text {
       color: #B8C7C9;
+
       max-width: 450px;
+
       font-size: 0.9rem;
     }
+
 
     .footer-links {
       display: flex;
+
       gap: 20px;
+
       flex-wrap: wrap;
     }
 
+
     .footer-links a {
       color: #D8EEF0;
+
       font-size: 0.9rem;
     }
 
+
     .copyright {
       border-top: 1px solid rgba(255,255,255,0.1);
+
       padding-top: 20px;
+
       color: #8EA2A5;
+
       font-size: 0.75rem;
     }
 
-    /* ==============================
-       RESPONSIVE
-    ============================== */
+
+    /* =========================================
+       CELULARES Y TABLETS
+    ========================================= */
 
     @media (max-width: 850px) {
 
@@ -576,88 +845,158 @@
         display: none;
       }
 
+
       .hero {
         min-height: 700px;
       }
 
+
       .about-grid {
         grid-template-columns: 1fr;
+
         gap: 40px;
       }
+
 
       .cards {
         grid-template-columns: 1fr;
       }
 
+
       .days {
         grid-template-columns: 1fr;
       }
 
+
       .hero h1 {
         letter-spacing: -3px;
       }
+
     }
 
+
     @media (max-width: 500px) {
+
+      nav {
+        padding: 14px 0;
+      }
+
+
+      .logo img {
+        height: 48px;
+      }
+
 
       .hero {
         min-height: 750px;
       }
 
+
       .hero-content {
         padding-top: 100px;
       }
+
 
       .hero h1 {
         font-size: 4.5rem;
       }
 
+
       .time-box {
         min-width: 75px;
+
         padding: 12px 10px;
       }
+
 
       .time-number {
         font-size: 1.7rem;
       }
 
+
       .quote-box {
         padding: 30px;
       }
 
+
       section.content-section {
         padding: 70px 0;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ==========================
-       NAVEGACIÓN
-  =========================== -->
+
+  <!-- =====================================
+       BARRA SUPERIOR
+  ====================================== -->
 
   <nav>
+
     <div class="nav-container">
 
-      <a href="#" class="logo-text">CIGMA 2026</a>
+      <!-- LOGO CIGMA -->
+
+      <a href="#inicio" class="logo">
+
+        <img
+          src="logo-cigma.png"
+          alt="Logo CIGMA 2026"
+        >
+
+      </a>
+
+
+      <!-- MENÚ -->
 
       <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#que-es">¿Qué es CIGMA?</a></li>
-        <li><a href="#propuesta">Qué vas a encontrar</a></li>
-        <li><a href="#jornadas">Jornadas</a></li>
-        <li><a href="#inscripcion">Inscripción</a></li>
+
+        <li>
+          <a href="#inicio">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="#que-es">
+            ¿Qué es CIGMA?
+          </a>
+        </li>
+
+        <li>
+          <a href="#propuesta">
+            Qué vas a encontrar
+          </a>
+        </li>
+
+        <li>
+          <a href="#jornadas">
+            Jornadas
+          </a>
+        </li>
+
+        <li>
+          <a href="#inscripcion">
+            Inscripción
+          </a>
+        </li>
+
       </ul>
 
     </div>
+
   </nav>
 
 
-  <!-- ==========================
-       HERO
-  =========================== -->
+
+  <!-- =====================================
+       PORTADA
+  ====================================== -->
 
   <header class="hero" id="inicio">
 
@@ -669,36 +1008,60 @@
           Congreso 2026
         </span>
 
-        <h1>CIGMA</h1>
+
+        <h1>
+          CIGMA
+        </h1>
+
 
         <p class="hero-subtitle">
+
           Congreso Interdisciplinario de Geofísica,
           Meteorología y Astronomía
+
         </p>
 
+
         <p class="identity">
-          Entre la Tierra y el Universo, nos encontramos para hacer ciencia.
+
+          Entre la Tierra y el Universo,
+          nos encontramos para hacer ciencia.
+
         </p>
+
 
         <div class="event-info">
 
           <span class="info-pill">
+
             📅 8 · 9 · 10 de octubre de 2026
+
           </span>
 
+
           <span class="info-pill">
+
             📍 Planetario FCAG – UNLP
+
           </span>
 
         </div>
 
+
         <div class="buttons">
 
-          <a href="#inscripcion" class="button button-primary">
+          <a
+            href="#inscripcion"
+            class="button button-primary"
+          >
             INSCRIBITE
           </a>
 
-          <a href="#jornadas" class="button button-outline">
+
+          <a
+            href="#jornadas"
+            class="button button-outline"
+          >
             VER CRONOGRAMA
           </a>
 
@@ -711,9 +1074,10 @@
   </header>
 
 
-  <!-- ==========================
+
+  <!-- =====================================
        CONTADOR
-  =========================== -->
+  ====================================== -->
 
   <section class="countdown-section">
 
@@ -723,26 +1087,70 @@
         Falta para encontrarnos
       </p>
 
+
       <div class="countdown">
 
         <div class="time-box">
-          <span class="time-number" id="days">--</span>
-          <span class="time-label">Días</span>
+
+          <span
+            class="time-number"
+            id="days"
+          >
+            --
+          </span>
+
+          <span class="time-label">
+            Días
+          </span>
+
         </div>
 
-        <div class="time-box">
-          <span class="time-number" id="hours">--</span>
-          <span class="time-label">Horas</span>
-        </div>
 
         <div class="time-box">
-          <span class="time-number" id="minutes">--</span>
-          <span class="time-label">Minutos</span>
+
+          <span
+            class="time-number"
+            id="hours"
+          >
+            --
+          </span>
+
+          <span class="time-label">
+            Horas
+          </span>
+
         </div>
 
+
         <div class="time-box">
-          <span class="time-number" id="seconds">--</span>
-          <span class="time-label">Segundos</span>
+
+          <span
+            class="time-number"
+            id="minutes"
+          >
+            --
+          </span>
+
+          <span class="time-label">
+            Minutos
+          </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            class="time-number"
+            id="seconds"
+          >
+            --
+          </span>
+
+          <span class="time-label">
+            Segundos
+          </span>
+
         </div>
 
       </div>
@@ -752,19 +1160,25 @@
   </section>
 
 
-  <!-- ==========================
-       ¿QUÉ ES CIGMA?
-  =========================== -->
 
-  <section class="content-section about" id="que-es">
+  <!-- =====================================
+       ¿QUÉ ES CIGMA?
+  ====================================== -->
+
+  <section
+    class="content-section about"
+    id="que-es"
+  >
 
     <div class="container">
+
 
       <div class="section-header">
 
         <div class="section-label">
           Conocé CIGMA
         </div>
+
 
         <h2 class="section-title">
           ¿Qué es CIGMA?
@@ -773,45 +1187,83 @@
       </div>
 
 
+
       <div class="about-grid">
+
 
         <div class="about-text">
 
-          <p>
-            El <strong>Congreso Interdisciplinario de Geofísica,
-            Meteorología y Astronomía (CIGMA)</strong> es un espacio
-            de encuentro pensado para acercar a estudiantes,
-            jóvenes investigadores, profesionales y referentes
-            de las Ciencias de la Tierra y el Espacio.
-          </p>
 
           <p>
-            Durante tres jornadas, CIGMA propone compartir
-            <strong>conocimientos, experiencias, proyectos e inquietudes</strong>,
+
+            El
+            <strong>
+              Congreso Interdisciplinario de Geofísica,
+              Meteorología y Astronomía (CIGMA)
+            </strong>
+            es un espacio de encuentro pensado para acercar
+            a estudiantes, jóvenes investigadores, profesionales
+            y referentes de las Ciencias de la Tierra y el Espacio.
+
+          </p>
+
+
+          <p>
+
+            Durante tres jornadas,
+            <strong>
+              CIGMA
+            </strong>
+            propone compartir
+            <strong>
+              conocimientos, experiencias, proyectos e inquietudes
+            </strong>,
             generando un espacio de intercambio entre tres disciplinas
             que, aunque estudian distintos aspectos de nuestro planeta
             y del Universo, comparten preguntas, herramientas y desafíos.
+
           </p>
+
 
           <p>
+
             Más que un congreso, buscamos construir un lugar donde
-            <strong>conocer otras formas de hacer ciencia, generar nuevos
-            vínculos y fortalecer nuestra comunidad científica.</strong>
+            <strong>
+              conocer otras formas de hacer ciencia,
+              generar nuevos vínculos y fortalecer nuestra comunidad científica
+            </strong>.
+
           </p>
 
+
+          <p>
+
+            Porque creemos que
+            <strong>
+              la ciencia también crece cuando nos encontramos
+            </strong>,
+            cuando compartimos lo que hacemos y cuando nos animamos
+            a mirar nuestras preguntas desde nuevas perspectivas.
+
+          </p>
+
+
         </div>
+
 
 
         <div class="quote-box">
 
           <p>
-            Porque creemos que la ciencia también crece cuando
-            nos encontramos, cuando compartimos lo que hacemos
-            y cuando nos animamos a mirar nuestras preguntas
-            desde nuevas perspectivas.
+
+            “La ciencia también crece cuando nos encontramos,
+            compartimos lo que hacemos y nos animamos a mirar
+            nuestras preguntas desde nuevas perspectivas.”
+
           </p>
 
         </div>
+
 
       </div>
 
@@ -820,13 +1272,18 @@
   </section>
 
 
-  <!-- ==========================
-       QUÉ VAS A ENCONTRAR
-  =========================== -->
 
-  <section class="content-section find-section" id="propuesta">
+  <!-- =====================================
+       QUÉ VAS A ENCONTRAR
+  ====================================== -->
+
+  <section
+    class="content-section find-section"
+    id="propuesta"
+  >
 
     <div class="container">
+
 
       <div class="section-header">
 
@@ -834,120 +1291,156 @@
           La propuesta
         </div>
 
+
         <h2 class="section-title">
           ¿Qué vas a encontrar en CIGMA?
         </h2>
 
+
         <p class="section-intro">
-          Tres jornadas pensadas para aprender, compartir,
-          conectar y proyectar nuevos caminos dentro de las
-          Ciencias de la Tierra y el Espacio.
+
+          Tres jornadas pensadas para aprender,
+          compartir, conectar y proyectar nuevos caminos
+          dentro de las Ciencias de la Tierra y el Espacio.
+
         </p>
 
       </div>
 
 
+
       <div class="cards">
+
 
         <article class="card">
 
-          <div class="card-number">01</div>
+          <div class="card-number">
+            01
+          </div>
 
           <h3>
             Charlas y experiencias
           </h3>
 
           <p>
-            Investigaciones, proyectos y experiencias de
-            profesionales y jóvenes investigadores de la
-            Geofísica, la Meteorología y la Astronomía.
+
+            Investigaciones, proyectos y experiencias
+            de profesionales y jóvenes investigadores
+            de la Geofísica, la Meteorología y la Astronomía.
+
           </p>
 
         </article>
 
 
+
         <article class="card">
 
-          <div class="card-number">02</div>
+          <div class="card-number">
+            02
+          </div>
 
           <h3>
             Presentaciones y pósters
           </h3>
 
           <p>
-            Un espacio para compartir trabajos, intercambiar
-            conocimientos y conocer qué se está haciendo
-            en distintas áreas.
+
+            Un espacio para compartir trabajos,
+            intercambiar conocimientos y conocer qué
+            se está haciendo en distintas áreas.
+
           </p>
 
         </article>
 
 
+
         <article class="card">
 
-          <div class="card-number">03</div>
+          <div class="card-number">
+            03
+          </div>
 
           <h3>
             Intercambio interdisciplinario
           </h3>
 
           <p>
+
             Un encuentro entre disciplinas que comparten
             preguntas, herramientas y desafíos.
+
           </p>
 
         </article>
 
 
+
         <article class="card">
 
-          <div class="card-number">04</div>
+          <div class="card-number">
+            04
+          </div>
 
           <h3>
             Investigación y oportunidades
           </h3>
 
           <p>
-            Conocé grupos de investigación, institutos y
-            diferentes espacios donde continuar desarrollándote
-            profesionalmente.
+
+            Conocé grupos de investigación, institutos
+            y diferentes espacios donde continuar
+            desarrollándote profesionalmente.
+
           </p>
 
         </article>
 
 
+
         <article class="card">
 
-          <div class="card-number">05</div>
+          <div class="card-number">
+            05
+          </div>
 
           <h3>
             Herramientas para el futuro
           </h3>
 
           <p>
-            El sábado estará dedicado especialmente a la
-            empleabilidad, con actividades y charlas pensadas
-            para conocer diferentes caminos profesionales.
+
+            El sábado estará dedicado especialmente
+            a la empleabilidad, con actividades y charlas
+            pensadas para conocer diferentes caminos profesionales.
+
           </p>
 
         </article>
 
 
+
         <article class="card">
 
-          <div class="card-number">06</div>
+          <div class="card-number">
+            06
+          </div>
 
           <h3>
             Nuevos vínculos
           </h3>
 
           <p>
-            Un espacio para conocer personas, compartir
-            experiencias y fortalecer nuestra comunidad
-            científica.
+
+            Un espacio para conocer personas,
+            compartir experiencias y fortalecer
+            nuestra comunidad científica.
+
           </p>
 
         </article>
+
 
       </div>
 
@@ -956,13 +1449,18 @@
   </section>
 
 
-  <!-- ==========================
-       TRES JORNADAS
-  =========================== -->
 
-  <section class="content-section days-section" id="jornadas">
+  <!-- =====================================
+       TRES JORNADAS
+  ====================================== -->
+
+  <section
+    class="content-section days-section"
+    id="jornadas"
+  >
 
     <div class="container">
+
 
       <div class="section-header">
 
@@ -970,19 +1468,25 @@
           8 · 9 · 10 de octubre
         </div>
 
+
         <h2 class="section-title">
           Tres jornadas para encontrarnos
         </h2>
 
+
         <p class="section-intro">
+
           Cada jornada propone una mirada diferente,
           construyendo juntas el recorrido de CIGMA.
+
         </p>
 
       </div>
 
 
+
       <div class="days">
+
 
         <article class="day day-1">
 
@@ -990,21 +1494,29 @@
             Jueves 8 de octubre
           </div>
 
+
           <h3>
             Conocer y descubrir
           </h3>
 
+
           <p>
+
             Un espacio para conocernos, compartir y descubrir
             la diversidad de las Ciencias de la Tierra y el Espacio,
             a través de charlas, trabajos, pósters y espacios de intercambio.
+
           </p>
 
+
           <span class="day-tag">
+
             Charlas · Pósters · Intercambio
+
           </span>
 
         </article>
+
 
 
         <article class="day day-2">
@@ -1013,21 +1525,29 @@
             Viernes 9 de octubre
           </div>
 
+
           <h3>
             Conectar y compartir
           </h3>
 
+
           <p>
+
             Una jornada para seguir explorando nuestras disciplinas,
             acercarnos a diferentes investigaciones y generar vínculos
             entre estudiantes, investigadores y profesionales.
+
           </p>
 
+
           <span class="day-tag">
+
             Charlas · Experiencias · Pósters
+
           </span>
 
         </article>
+
 
 
         <article class="day day-3">
@@ -1036,21 +1556,30 @@
             Sábado 10 de octubre
           </div>
 
+
           <h3>
             Proyectar el futuro
           </h3>
 
+
           <p>
-            Una jornada dedicada a la empleabilidad, la investigación
-            y las posibilidades de desarrollo profesional, con grupos
-            de investigación, institutos y herramientas para el futuro.
+
+            Una jornada dedicada a la empleabilidad,
+            la investigación y las posibilidades de desarrollo
+            profesional, con grupos de investigación,
+            institutos y herramientas para el futuro.
+
           </p>
 
+
           <span class="day-tag">
+
             Empleabilidad · Investigación · Futuro
+
           </span>
 
         </article>
+
 
       </div>
 
@@ -1059,46 +1588,69 @@
   </section>
 
 
-  <!-- ==========================
-       INSCRIPCIÓN
-  =========================== -->
 
-  <section class="content-section registration" id="inscripcion">
+  <!-- =====================================
+       INSCRIPCIÓN
+  ====================================== -->
+
+  <section
+    class="content-section registration"
+    id="inscripcion"
+  >
 
     <div class="container">
 
+
       <span class="free-badge">
+
         INSCRIPCIÓN GRATUITA
+
       </span>
 
+
       <h2 class="section-title">
+
         ¿Nos encontramos en CIGMA?
+
       </h2>
 
+
       <p class="section-intro">
-        Tres jornadas para aprender, compartir y descubrir
-        nuevos caminos dentro de las Ciencias de la Tierra
-        y el Espacio.
+
+        Tres jornadas para aprender, compartir
+        y descubrir nuevos caminos dentro de las
+        Ciencias de la Tierra y el Espacio.
+
       </p>
 
-      <a href="#" class="button button-primary">
+
+      <a
+        href="#"
+        class="button button-primary"
+      >
+
         IR A LA INSCRIPCIÓN
+
       </a>
+
 
     </div>
 
   </section>
 
 
-  <!-- ==========================
-       FOOTER
-  =========================== -->
+
+  <!-- =====================================
+       PIE DE PÁGINA
+  ====================================== -->
 
   <footer>
 
     <div class="container">
 
+
       <div class="footer-content">
+
 
         <div>
 
@@ -1106,24 +1658,41 @@
             CIGMA 2026
           </div>
 
+
           <p class="footer-text">
+
             Congreso Interdisciplinario de Geofísica,
             Meteorología y Astronomía.
+
           </p>
 
         </div>
 
 
+
         <div class="footer-links">
 
-          <a href="#inicio">Inicio</a>
-          <a href="#que-es">¿Qué es CIGMA?</a>
-          <a href="#jornadas">Cronograma</a>
-          <a href="#inscripcion">Inscripción</a>
+          <a href="#inicio">
+            Inicio
+          </a>
+
+          <a href="#que-es">
+            ¿Qué es CIGMA?
+          </a>
+
+          <a href="#jornadas">
+            Cronograma
+          </a>
+
+          <a href="#inscripcion">
+            Inscripción
+          </a>
 
         </div>
 
+
       </div>
+
 
 
       <div class="copyright">
@@ -1132,80 +1701,108 @@
 
       </div>
 
+
     </div>
 
   </footer>
 
 
-  <!-- ==========================
-       CONTADOR JAVASCRIPT
-  =========================== -->
+
+  <!-- =====================================
+       CONTADOR
+  ====================================== -->
 
   <script>
 
-    /*
-      Fecha de inicio del Congreso.
-
-      IMPORTANTE:
-      Por ahora está configurado para las 09:00
-      del 8 de octubre de 2026.
-    */
-
-    const eventDate = new Date("2026-10-08T09:00:00-03:00").getTime();
+    const eventDate =
+      new Date(
+        "2026-10-08T09:00:00-03:00"
+      ).getTime();
 
 
     function updateCountdown() {
 
-      const now = new Date().getTime();
+      const now =
+        new Date().getTime();
 
-      const distance = eventDate - now;
+
+      const distance =
+        eventDate - now;
 
 
       if (distance <= 0) {
 
         document.getElementById("days").textContent = "0";
+
         document.getElementById("hours").textContent = "0";
+
         document.getElementById("minutes").textContent = "0";
+
         document.getElementById("seconds").textContent = "0";
 
         return;
-
       }
 
 
-      const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-      );
-
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
-      );
-
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
-      );
-
-      const seconds = Math.floor(
-        (distance % (1000 * 60))
-        / 1000
-      );
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
 
 
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
+      const hours =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (distance %
+            (1000 * 60)) /
+          1000
+        );
+
+
+      document.getElementById("days").textContent =
+        days;
+
+
+      document.getElementById("hours").textContent =
+        hours;
+
+
+      document.getElementById("minutes").textContent =
+        minutes;
+
+
+      document.getElementById("seconds").textContent =
+        seconds;
 
     }
 
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
 
   </script>
+
 
 </body>
 </html>
