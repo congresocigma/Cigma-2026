@@ -1,1 +1,3659 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Cronograma | CIGMA 2026</title>
+
+  <meta
+    name="description"
+    content="Cronograma del Congreso Interdisciplinario de Geofísica, Meteorología y Astronomía - CIGMA 2026."
+  >
+
+
+  <style>
+
+    /* =========================================
+       COLORES CIGMA
+    ========================================= */
+
+    :root {
+
+      --marron: #612D1B;
+      --turquesa-oscuro: #00505C;
+      --turquesa: #00788F;
+
+      --crema: #F5F1EA;
+      --blanco: #FFFFFF;
+
+      --gris: #687477;
+      --gris-claro: #E7ECEB;
+      --negro: #183034;
+
+    }
+
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: var(--crema);
+
+      color: var(--negro);
+
+      line-height: 1.6;
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button {
+      font: inherit;
+    }
+
+
+    .container {
+
+      width: min(1180px, 92%);
+
+      margin: 0 auto;
+
+    }
+
+
+    /* =========================================
+       NAVEGACIÓN
+    ========================================= */
+
+    nav {
+
+      width: 100%;
+
+      background: var(--turquesa-oscuro);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      box-shadow:
+        0 4px 18px rgba(0,0,0,0.08);
+
+    }
+
+
+    .nav-container {
+
+      width: min(1200px, 92%);
+
+      min-height: 84px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .logo {
+
+      display: flex;
+
+      align-items: center;
+
+      flex-shrink: 0;
+
+    }
+
+
+    .logo img {
+
+      width: 175px;
+
+      height: auto;
+
+      display: block;
+
+    }
+
+
+    .nav-links {
+
+      list-style: none;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 27px;
+
+    }
+
+
+    .nav-links a {
+
+      color: var(--blanco);
+
+      font-size: 0.88rem;
+
+      font-weight: 700;
+
+      transition: opacity 0.2s ease;
+
+    }
+
+
+    .nav-links a:hover {
+      opacity: 0.72;
+    }
+
+
+    .nav-links .active {
+
+      padding-bottom: 6px;
+
+      border-bottom:
+        2px solid var(--blanco);
+
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        105px 0
+        90px;
+
+      color: var(--blanco);
+
+      background:
+
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(0,120,143,0.55),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 5% 100%,
+          rgba(97,45,27,0.75),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          #003D47,
+          #00505C 58%,
+          #173A40
+        );
+
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+
+      height: 520px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      right: -180px;
+
+      top: -260px;
+
+      box-shadow:
+
+        0 0 0 65px
+        rgba(255,255,255,0.025),
+
+        0 0 0 130px
+        rgba(255,255,255,0.025);
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 850px;
+
+    }
+
+
+    .hero-label {
+
+      display: inline-block;
+
+      margin-bottom: 20px;
+
+      padding:
+        7px 14px;
+
+      border:
+        1px solid rgba(255,255,255,0.3);
+
+      border-radius: 30px;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .hero h1 {
+
+      font-size:
+        clamp(3rem, 7vw, 5.8rem);
+
+      line-height: 0.95;
+
+      margin-bottom: 22px;
+
+      letter-spacing: -3px;
+
+    }
+
+
+    .hero p {
+
+      max-width: 680px;
+
+      color: #D8EEF0;
+
+      font-size:
+        clamp(1rem, 2vw, 1.2rem);
+
+    }
+
+
+    .hero-date {
+
+      margin-top: 30px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+    }
+
+
+    .hero-pill {
+
+      padding:
+        9px 15px;
+
+      border:
+        1px solid rgba(255,255,255,0.22);
+
+      background:
+        rgba(255,255,255,0.08);
+
+      border-radius: 30px;
+
+      font-size: 0.9rem;
+
+    }
+
+
+    /* =========================================
+       ÁREA PRINCIPAL
+    ========================================= */
+
+    .schedule-section {
+
+      padding:
+        80px 0
+        110px;
+
+    }
+
+
+    .schedule-intro {
+
+      max-width: 760px;
+
+      margin-bottom: 45px;
+
+    }
+
+
+    .schedule-intro h2 {
+
+      color:
+        var(--turquesa-oscuro);
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .schedule-intro p {
+
+      color: var(--gris);
+
+    }
+
+
+    /* =========================================
+       SELECTOR DE DÍAS
+    ========================================= */
+
+    .day-selector {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+
+      padding: 8px;
+
+      margin-bottom: 35px;
+
+      background: var(--blanco);
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.06);
+
+    }
+
+
+    .day-button {
+
+      border: 0;
+
+      cursor: pointer;
+
+      padding:
+        18px 15px;
+
+      border-radius: 9px;
+
+      background: transparent;
+
+      color: var(--gris);
+
+      font-weight: 800;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .day-button span {
+
+      display: block;
+
+      margin-top: 3px;
+
+      font-size: 0.74rem;
+
+      font-weight: 500;
+
+      opacity: 0.8;
+
+    }
+
+
+    .day-button:hover {
+
+      background: #EDF5F5;
+
+      color: var(--turquesa-oscuro);
+
+    }
+
+
+    .day-button.active {
+
+      color: var(--blanco);
+
+      background: var(--turquesa-oscuro);
+
+    }
+
+
+    /* =========================================
+       FILTROS
+    ========================================= */
+
+    .filters-wrapper {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 45px;
+
+    }
+
+
+    .filters-title {
+
+      color: var(--gris);
+
+      font-size: 0.85rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+    }
+
+
+    .filters {
+
+      display: flex;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .filter-button {
+
+      cursor: pointer;
+
+      border:
+        1px solid #CCD8D8;
+
+      padding:
+        10px 17px;
+
+      border-radius: 30px;
+
+      background: var(--blanco);
+
+      color: var(--gris);
+
+      font-size: 0.84rem;
+
+      font-weight: 700;
+
+      transition:
+        all 0.2s ease;
+
+    }
+
+
+    .filter-button:hover {
+
+      border-color:
+        var(--turquesa);
+
+      color:
+        var(--turquesa-oscuro);
+
+    }
+
+
+    .filter-button.active {
+
+      background:
+        var(--turquesa-oscuro);
+
+      color:
+        var(--blanco);
+
+      border-color:
+        var(--turquesa-oscuro);
+
+    }
+
+
+    .filter-note {
+
+      width: 100%;
+
+      margin-top: 2px;
+
+      color: #7F8B8D;
+
+      font-size: 0.82rem;
+
+    }
+
+
+    /* =========================================
+       ENCABEZADO DEL DÍA
+    ========================================= */
+
+    .current-day-header {
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      padding-bottom: 22px;
+
+      margin-bottom: 10px;
+
+      border-bottom:
+        1px solid #D8DEDD;
+
+    }
+
+
+    .current-day-header h3 {
+
+      color:
+        var(--turquesa-oscuro);
+
+      font-size:
+        clamp(1.7rem, 4vw, 2.5rem);
+
+    }
+
+
+    .current-day-header p {
+
+      color: var(--gris);
+
+      font-size: 0.9rem;
+
+    }
+
+
+    /* =========================================
+       CRONOGRAMA
+    ========================================= */
+
+    .schedule-list {
+
+      position: relative;
+
+      max-width: 1000px;
+
+      padding-top: 18px;
+
+    }
+
+
+    .schedule-list::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 30px;
+
+      bottom: 10px;
+
+      left: 119px;
+
+      width: 1px;
+
+      background: #D8DEDD;
+
+    }
+
+
+    .schedule-item {
+
+      display: grid;
+
+      grid-template-columns:
+        95px 1fr;
+
+      gap: 50px;
+
+      position: relative;
+
+      padding:
+        13px 0;
+
+    }
+
+
+    .schedule-item.hidden {
+      display: none;
+    }
+
+
+    .schedule-time {
+
+      padding-top: 22px;
+
+      color:
+        var(--turquesa-oscuro);
+
+      font-size: 0.93rem;
+
+      font-weight: 800;
+
+      text-align: right;
+
+    }
+
+
+    .schedule-content {
+
+      position: relative;
+
+      background:
+        var(--blanco);
+
+      border-radius: 10px;
+
+      padding:
+        23px 25px;
+
+      border:
+        1px solid #E0E6E5;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    }
+
+
+    .schedule-content::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+
+      height: 11px;
+
+      left: -32px;
+
+      top: 30px;
+
+      border-radius: 50%;
+
+      background:
+        var(--turquesa-oscuro);
+
+      border:
+        4px solid var(--crema);
+
+      box-shadow:
+        0 0 0 1px #B7C6C7;
+
+    }
+
+
+    .schedule-item:hover
+    .schedule-content {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.06);
+
+    }
+
+
+    /* =========================================
+       ETIQUETAS
+    ========================================= */
+
+    .tag {
+
+      display: inline-block;
+
+      margin-bottom: 10px;
+
+      padding:
+        5px 10px;
+
+      border-radius: 20px;
+
+      font-size: 0.67rem;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .tag-astronomia {
+
+      color: #FFFFFF;
+
+      background:
+        var(--turquesa-oscuro);
+
+    }
+
+
+    .tag-geofisica {
+
+      color: #FFFFFF;
+
+      background:
+        var(--marron);
+
+    }
+
+
+    .tag-meteorologia {
+
+      color: #FFFFFF;
+
+      background:
+        var(--turquesa);
+
+    }
+
+
+    .tag-general {
+
+      color: #536164;
+
+      background: #E4EAE9;
+
+    }
+
+
+    .tag-especial {
+
+      color: #FFFFFF;
+
+      background: #445A5E;
+
+    }
+
+
+    .tag-empleabilidad {
+
+      color: #FFFFFF;
+
+      background: var(--marron);
+
+    }
+
+
+    .tag-institutos {
+
+      color:
+        var(--turquesa-oscuro);
+
+      background: #DCECEE;
+
+    }
+
+
+    /* =========================================
+       TEXTOS DE ACTIVIDADES
+    ========================================= */
+
+    .schedule-content h4 {
+
+      color: var(--negro);
+
+      font-size: 1.08rem;
+
+      line-height: 1.35;
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .speaker {
+
+      color: var(--gris);
+
+      font-size: 0.92rem;
+
+    }
+
+
+    .pending {
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+      padding:
+        5px 9px;
+
+      background: #F4EBDD;
+
+      border-radius: 5px;
+
+      color: #7B5B35;
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+    }
+
+
+    /* =========================================
+       MENSAJE SIN RESULTADOS
+    ========================================= */
+
+    .no-results {
+
+      display: none;
+
+      padding:
+        50px 25px;
+
+      margin-top: 20px;
+
+      text-align: center;
+
+      background: var(--blanco);
+
+      border-radius: 10px;
+
+      border:
+        1px solid var(--gris-claro);
+
+      color: var(--gris);
+
+    }
+
+
+    /* =========================================
+       AVISO CRONOGRAMA
+    ========================================= */
+
+    .schedule-notice {
+
+      margin-top: 55px;
+
+      padding:
+        22px 25px;
+
+      border-left:
+        4px solid var(--marron);
+
+      background: #EEE7E1;
+
+      color: #644F45;
+
+      font-size: 0.9rem;
+
+    }
+
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .cta {
+
+      padding:
+        80px 0;
+
+      background:
+        var(--turquesa-oscuro);
+
+      color: var(--blanco);
+
+      text-align: center;
+
+    }
+
+
+    .cta h2 {
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .cta p {
+
+      max-width: 620px;
+
+      margin:
+        0 auto 30px;
+
+      color: #D8EEF0;
+
+    }
+
+
+    .cta-button {
+
+      display: inline-block;
+
+      padding:
+        13px 23px;
+
+      border-radius: 5px;
+
+      background: var(--blanco);
+
+      color:
+        var(--turquesa-oscuro);
+
+      font-weight: 800;
+
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+
+      padding:
+        45px 0
+        28px;
+
+      color:
+        var(--blanco);
+
+      background: #173236;
+
+    }
+
+
+    .footer-main {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .footer-title {
+
+      font-size: 1.3rem;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .footer-description {
+
+      max-width: 460px;
+
+      color: #B8C7C9;
+
+      font-size: 0.86rem;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+
+      color: #D8EEF0;
+
+      font-size: 0.86rem;
+
+    }
+
+
+    .copyright {
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.1);
+
+      color: #82989B;
+
+      font-size: 0.75rem;
+
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media
+    (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .day-selector {
+        grid-template-columns: 1fr;
+      }
+
+      .current-day-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media
+    (max-width: 650px) {
+
+      .hero {
+        padding:
+          75px 0
+          65px;
+      }
+
+      .schedule-section {
+        padding:
+          60px 0
+          80px;
+      }
+
+      .filters-wrapper {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .schedule-list::before {
+        display: none;
+      }
+
+      .schedule-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+
+        padding:
+          10px 0;
+
+      }
+
+      .schedule-time {
+
+        padding-top: 0;
+
+        text-align: left;
+
+      }
+
+      .schedule-content::before {
+        display: none;
+      }
+
+      .schedule-content {
+        padding:
+          20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVEGACIÓN
+  ========================================== -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a
+        href="./index.html"
+        class="logo"
+      >
+
+        <img
+          src="./logo-cigma.png"
+          alt="CIGMA 2026"
+        >
+
+      </a>
+
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="./index.html">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="./cronograma.html"
+            class="active"
+          >
+            Cronograma
+          </a>
+        </li>
+
+        <li>
+          <a href="./expositores.html">
+            Expositores
+          </a>
+        </li>
+
+        <li>
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          CIGMA 2026
+        </span>
+
+        <h1>
+          Cronograma
+        </h1>
+
+        <p>
+          Tres jornadas para compartir conocimientos,
+          conocer distintas formas de hacer ciencia y
+          descubrir nuevos caminos dentro de la Geofísica,
+          la Meteorología y la Astronomía.
+        </p>
+
+
+        <div class="hero-date">
+
+          <span class="hero-pill">
+            8 · 9 · 10 de octubre
+          </span>
+
+          <span class="hero-pill">
+            Planetario FCAG – UNLP
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================
+       CRONOGRAMA
+  ========================================== -->
+
+  <main class="schedule-section">
+
+    <div class="container">
+
+
+      <div class="schedule-intro">
+
+        <h2>
+          Elegí tu jornada
+        </h2>
+
+        <p>
+          Navegá entre los tres días del congreso
+          y filtrá las charlas según el área que más
+          te interese.
+        </p>
+
+      </div>
+
+
+
+      <!-- =====================================
+           DÍAS
+      ====================================== -->
+
+      <div
+        class="day-selector"
+        role="tablist"
+        aria-label="Seleccionar día"
+      >
+
+        <button
+          class="day-button active"
+          data-day-button="jueves"
+          type="button"
+        >
+          Jueves 8
+          <span>
+            Charlas · Pósters · Intercambio
+          </span>
+        </button>
+
+
+        <button
+          class="day-button"
+          data-day-button="viernes"
+          type="button"
+        >
+          Viernes 9
+          <span>
+            Charlas · Pósters · Actividades
+          </span>
+        </button>
+
+
+        <button
+          class="day-button"
+          data-day-button="sabado"
+          type="button"
+        >
+          Sábado 10
+          <span>
+            Institutos · Empleabilidad · Futuro
+          </span>
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================
+           FILTROS
+      ====================================== -->
+
+      <div class="filters-wrapper">
+
+        <div class="filters-title">
+          Filtrar charlas por área
+        </div>
+
+
+        <div class="filters">
+
+          <button
+            type="button"
+            class="filter-button active"
+            data-filter="todas"
+          >
+            Todas
+          </button>
+
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="astronomia"
+          >
+            Astronomía
+          </button>
+
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="geofisica"
+          >
+            Geofísica
+          </button>
+
+
+          <button
+            type="button"
+            class="filter-button"
+            data-filter="meteorologia"
+          >
+            Meteorología
+          </button>
+
+        </div>
+
+
+        <p
+          class="filter-note"
+          id="filter-note"
+        >
+          Las actividades generales, pausas y pósters
+          permanecen visibles al filtrar.
+        </p>
+
+      </div>
+
+
+
+      <!-- =====================================
+           ENCABEZADO DEL DÍA
+      ====================================== -->
+
+      <div class="current-day-header">
+
+        <div>
+
+          <h3 id="current-day-title">
+            Jueves 8 de octubre
+          </h3>
+
+          <p id="current-day-description">
+            Primera jornada de CIGMA 2026
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           LISTADO
+      ====================================== -->
+
+      <div
+        class="schedule-list"
+        id="schedule-list"
+      >
+
+
+        <!-- ===================================
+             JUEVES
+        ==================================== -->
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            08:00 – 09:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              General
+            </span>
+
+            <h4>
+              Acreditación
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            09:00 – 10:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Apertura
+            </span>
+
+            <h4>
+              Ceremonia de apertura
+            </h4>
+
+            <p class="speaker">
+              Autoridades y Comité Organizador
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            10:20 – 10:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Charla de Astronomía
+            </h4>
+
+            <span class="pending">
+              A confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            10:40 – 11:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              CLAVE
+            </h4>
+
+            <p class="speaker">
+              Josefina Blasquez
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            11:00 – 11:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              Métodos geofísicos aplicados a la arqueología
+            </h4>
+
+            <p class="speaker">
+              Santiago Perdomo
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            11:20 – 11:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Agujeros negros
+            </h4>
+
+            <p class="speaker">
+              Florencia Vieyro
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            11:40 – 13:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Pausa
+            </span>
+
+            <h4>
+              Almuerzo
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="especial"
+        >
+
+          <div class="schedule-time">
+            13:00 – 13:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-especial">
+              Charla especial
+            </span>
+
+            <h4>
+              Divulgación de la astronomía
+            </h4>
+
+            <p class="speaker">
+              Diego Bagú
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            13:40 – 14:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              Charla de Meteorología
+            </h4>
+
+            <span class="pending">
+              A confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            14:00 – 14:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              Sismología volcánica
+            </h4>
+
+            <p class="speaker">
+              Gabriela Badi
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            14:20 – 14:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Estrellas masivas / Gemini
+            </h4>
+
+            <p class="speaker">
+              Gabriel Ferrero
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            14:40 – 15:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              Charla de Meteorología
+            </h4>
+
+            <span class="pending">
+              A confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            15:00 – 15:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Coffee break
+            </span>
+
+            <h4>
+              Merienda
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            15:40 – 16:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              IA en la interpretación sísmica
+            </h4>
+
+            <p class="speaker">
+              Juan Moirano
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            16:00 – 16:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Cosmología
+            </h4>
+
+            <p class="speaker">
+              Daniela Pérez
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="jueves"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            16:20 – 18:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Pósters
+            </span>
+
+            <h4>
+              Presentación de pósters
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ===================================
+             VIERNES
+        ==================================== -->
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            09:00 – 09:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              Monitoreo de ceniza volcánica
+            </h4>
+
+            <p class="speaker">
+              Juan Augusto Díaz
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            09:20 – 09:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              ¿Qué hace una geofísica de exploración?
+            </h4>
+
+            <p class="speaker">
+              Andrea Vega
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            09:40 – 10:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Exoplanetas
+            </h4>
+
+            <p class="speaker">
+              Juan Serrano
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            10:00 – 10:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              Cambio Climático
+            </h4>
+
+            <p class="speaker">
+              José Blasquez
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            10:20 – 11:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Coffee break
+            </span>
+
+            <h4>
+              Desayuno
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            11:00 – 11:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              Proyecto sismológico en la Patagonia Argentina
+            </h4>
+
+            <p class="speaker">
+              Celeste Bollini
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            11:20 – 11:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Sistemas binarios de rayos X
+            </h4>
+
+            <p class="speaker">
+              Jorge Combi
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            11:40 – 12:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              GPS y vapor de agua
+            </h4>
+
+            <p class="speaker">
+              Paula Natali
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="especial"
+        >
+
+          <div class="schedule-time">
+            12:00 – 12:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-especial">
+              Charla especial
+            </span>
+
+            <h4>
+              Sistema de alerta temprana
+            </h4>
+
+            <p class="speaker">
+              Daniel Anaya
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            12:40 – 13:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Pausa
+            </span>
+
+            <h4>
+              Almuerzo
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            13:40 – 14:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              Aguas subterráneas y su importancia
+            </h4>
+
+            <p class="speaker">
+              Luis Guarracino
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            14:00 – 14:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Ondas gravitacionales
+            </h4>
+
+            <p class="speaker">
+              Leandro Abaroa
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            14:20 – 14:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              Actividad eléctrica
+            </h4>
+
+            <p class="speaker">
+              Gabi Nicora · Constanza · Flor Barle
+            </p>
+
+            <span class="pending">
+              Pendiente de confirmación
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="geofisica"
+        >
+
+          <div class="schedule-time">
+            14:40 – 15:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-geofisica">
+              Geofísica
+            </span>
+
+            <h4>
+              Glaciares y métodos eléctricos
+            </h4>
+
+            <p class="speaker">
+              Andreas Richter
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            15:00 – 15:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Coffee break
+            </span>
+
+            <h4>
+              Merienda
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="especial"
+        >
+
+          <div class="schedule-time">
+            15:40 – 16:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-especial">
+              Charla especial
+            </span>
+
+            <h4>
+              De estudiante a gerente de Geofísica de YPF
+            </h4>
+
+            <p class="speaker">
+              Gonzalo Flores
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="astronomia"
+        >
+
+          <div class="schedule-time">
+            16:20 – 16:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-astronomia">
+              Astronomía
+            </span>
+
+            <h4>
+              Pulsares
+            </h4>
+
+            <p class="speaker">
+              Guillermo Gancio
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="meteorologia"
+        >
+
+          <div class="schedule-time">
+            16:40 – 17:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-meteorologia">
+              Meteorología
+            </span>
+
+            <h4>
+              IA y sus aplicaciones en la meteorología
+            </h4>
+
+            <p class="speaker">
+              Sergio Jalfin
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            17:00 – 19:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Pósters
+            </span>
+
+            <h4>
+              Presentación de pósters
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            19:00 – 20:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Actividad
+            </span>
+
+            <h4>
+              Camión sísmico
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="viernes"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            20:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Astronomía
+            </span>
+
+            <h4>
+              Observación nocturna
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ===================================
+             SÁBADO
+        ==================================== -->
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            09:00 – 09:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              AGGO
+            </h4>
+
+            <p class="speaker">
+              Mauricio Gende
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            09:20 – 09:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              MAGGIA
+            </h4>
+
+            <p class="speaker">
+              Amalia Meza
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            09:40 – 10:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              CAM
+            </h4>
+
+            <span class="pending">
+              Orador/a a confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            10:00 – 10:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Coffee break
+            </span>
+
+            <h4>
+              Desayuno
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            10:40 – 11:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              GIGA
+            </h4>
+
+            <p class="speaker">
+              Santiago Perdomo
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            11:00 – 11:30
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              IAR
+            </h4>
+
+            <p class="speaker">
+              Gustavo Romero
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            11:30 – 12:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              ConstelAR
+            </h4>
+
+            <p class="speaker">
+              Carolina Renaud
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            12:00 – 13:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Pausa
+            </span>
+
+            <h4>
+              Almuerzo
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="empleabilidad"
+        >
+
+          <div class="schedule-time">
+            13:00 – 13:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-empleabilidad">
+              Empleabilidad
+            </span>
+
+            <h4>
+              Taller de CV
+            </h4>
+
+            <p class="speaker">
+              EmpleoTécnica
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="empleabilidad"
+        >
+
+          <div class="schedule-time">
+            13:40 – 14:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-empleabilidad">
+              Empleabilidad
+            </span>
+
+            <h4>
+              Fundación YPF
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            14:20 – 14:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              PRONO
+            </h4>
+
+            <span class="pending">
+              Orador/a a confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            14:40 – 15:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              OGT · EARG · CASLEO
+            </h4>
+
+            <p class="speaker">
+              Gestión de la Facultad
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            15:00 – 15:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              Actividades a confirmar
+            </h4>
+
+            <span class="pending">
+              Cronograma en definición
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            15:40 – 16:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              AAA
+            </h4>
+
+            <span class="pending">
+              Orador/a a confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            16:00 – 16:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              Coffee break
+            </span>
+
+            <h4>
+              Merienda
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            16:40 – 17:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              AAGG
+            </h4>
+
+            <span class="pending">
+              A confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            17:00 – 17:20
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              Modelado
+            </h4>
+
+            <span class="pending">
+              Orador/a a confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            17:20 – 17:40
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              IALP
+            </h4>
+
+            <span class="pending">
+              A confirmar
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="institutos"
+        >
+
+          <div class="schedule-time">
+            17:40 – 18:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-institutos">
+              Institutos
+            </span>
+
+            <h4>
+              CIGEOF
+            </h4>
+
+            <p class="speaker">
+              Danilo Velis
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article
+          class="schedule-item"
+          data-day="sabado"
+          data-area="general"
+        >
+
+          <div class="schedule-time">
+            18:00
+          </div>
+
+          <div class="schedule-content">
+
+            <span class="tag tag-general">
+              CIGMA
+            </span>
+
+            <h4>
+              Cierre
+            </h4>
+
+          </div>
+
+        </article>
+
+
+
+      </div>
+
+
+
+      <!-- SIN RESULTADOS -->
+
+      <div
+        class="no-results"
+        id="no-results"
+      >
+
+        No hay charlas de esta área programadas
+        para la jornada seleccionada.
+
+      </div>
+
+
+
+      <!-- AVISO -->
+
+      <div class="schedule-notice">
+
+        <strong>
+          Cronograma sujeto a modificaciones.
+        </strong>
+
+        Algunos horarios, oradores y actividades
+        todavía se encuentran en proceso de confirmación.
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =========================================
+       CTA
+  ========================================== -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        ¿Ya te inscribiste?
+      </h2>
+
+      <p>
+        La inscripción a CIGMA 2026 es gratuita.
+        Sumate a tres jornadas de ciencia,
+        intercambio y comunidad.
+      </p>
+
+      <a
+        href="./inscripcion.html"
+        class="cta-button"
+      >
+        IR A INSCRIPCIÓN
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+
+          <div class="footer-title">
+            CIGMA 2026
+          </div>
+
+          <p class="footer-description">
+
+            Congreso Interdisciplinario de Geofísica,
+            Meteorología y Astronomía.
+
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="./index.html">
+            Inicio
+          </a>
+
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+
+          <a href="./expositores.html">
+            Expositores
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © 2026 CIGMA · Planetario FCAG – UNLP
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================
+       FILTROS JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    const dayButtons =
+      document.querySelectorAll(
+        "[data-day-button]"
+      );
+
+
+    const filterButtons =
+      document.querySelectorAll(
+        "[data-filter]"
+      );
+
+
+    const scheduleItems =
+      document.querySelectorAll(
+        ".schedule-item"
+      );
+
+
+    const currentDayTitle =
+      document.getElementById(
+        "current-day-title"
+      );
+
+
+    const currentDayDescription =
+      document.getElementById(
+        "current-day-description"
+      );
+
+
+    const filterNote =
+      document.getElementById(
+        "filter-note"
+      );
+
+
+    const noResults =
+      document.getElementById(
+        "no-results"
+      );
+
+
+    let currentDay =
+      "jueves";
+
+
+    let currentFilter =
+      "todas";
+
+
+    const dayInformation = {
+
+      jueves: {
+
+        title:
+          "Jueves 8 de octubre",
+
+        description:
+          "Charlas, apertura, pósters e intercambio entre disciplinas."
+
+      },
+
+      viernes: {
+
+        title:
+          "Viernes 9 de octubre",
+
+        description:
+          "Una nueva jornada de charlas, experiencias y actividades científicas."
+
+      },
+
+      sabado: {
+
+        title:
+          "Sábado 10 de octubre",
+
+        description:
+          "Institutos, empleabilidad y diferentes caminos para nuestro futuro profesional."
+
+      }
+
+    };
+
+
+    function resetFilters() {
+
+      currentFilter =
+        "todas";
+
+
+      filterButtons.forEach(
+        button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.filter ===
+            "todas"
+          );
+
+        }
+      );
+
+    }
+
+
+    function updateSchedule() {
+
+      let visibleItems =
+        0;
+
+
+      const isSaturday =
+        currentDay ===
+        "sabado";
+
+
+      /*
+        En sábado no aplicamos los filtros
+        disciplinarios porque la jornada está
+        organizada en torno a institutos y
+        empleabilidad.
+      */
+
+      if (isSaturday) {
+
+        resetFilters();
+
+
+        filterButtons.forEach(
+          button => {
+
+            button.disabled =
+              button.dataset.filter !==
+              "todas";
+
+
+            button.style.opacity =
+              button.disabled
+              ? "0.42"
+              : "1";
+
+
+            button.style.cursor =
+              button.disabled
+              ? "not-allowed"
+              : "pointer";
+
+          }
+        );
+
+
+        filterNote.textContent =
+          "El sábado está dedicado a institutos, grupos de investigación y empleabilidad.";
+
+      }
+
+      else {
+
+        filterButtons.forEach(
+          button => {
+
+            button.disabled =
+              false;
+
+
+            button.style.opacity =
+              "1";
+
+
+            button.style.cursor =
+              "pointer";
+
+          }
+        );
+
+
+        filterNote.textContent =
+          "Las actividades generales, pausas y pósters permanecen visibles al filtrar.";
+
+      }
+
+
+      scheduleItems.forEach(
+        item => {
+
+          const itemDay =
+            item.dataset.day;
+
+
+          const itemArea =
+            item.dataset.area;
+
+
+          const correctDay =
+            itemDay ===
+            currentDay;
+
+
+          /*
+            Actividades generales y especiales
+            se mantienen visibles aunque se
+            seleccione una disciplina.
+          */
+
+          const generalActivity =
+
+            itemArea === "general" ||
+
+            itemArea === "especial";
+
+
+          const correctArea =
+
+            currentFilter === "todas" ||
+
+            itemArea === currentFilter ||
+
+            generalActivity;
+
+
+          const shouldShow =
+            correctDay &&
+            correctArea;
+
+
+          item.classList.toggle(
+            "hidden",
+            !shouldShow
+          );
+
+
+          if (shouldShow) {
+            visibleItems++;
+          }
+
+        }
+      );
+
+
+      noResults.style.display =
+        visibleItems === 0
+        ? "block"
+        : "none";
+
+
+      currentDayTitle.textContent =
+        dayInformation[
+          currentDay
+        ].title;
+
+
+      currentDayDescription.textContent =
+        dayInformation[
+          currentDay
+        ].description;
+
+    }
+
+
+    dayButtons.forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentDay =
+              button.dataset.dayButton;
+
+
+            dayButtons.forEach(
+              otherButton => {
+
+                otherButton.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            button.classList.add(
+              "active"
+            );
+
+
+            if (
+              currentDay ===
+              "sabado"
+            ) {
+
+              resetFilters();
+
+            }
+
+
+            updateSchedule();
+
+
+            document
+              .querySelector(
+                ".current-day-header"
+              )
+              .scrollIntoView({
+                behavior:
+                  "smooth",
+
+                block:
+                  "start"
+              });
+
+          }
+        );
+
+      }
+    );
+
+
+    filterButtons.forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            if (
+              button.disabled
+            ) {
+              return;
+            }
+
+
+            currentFilter =
+              button.dataset.filter;
+
+
+            filterButtons.forEach(
+              otherButton => {
+
+                otherButton.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            button.classList.add(
+              "active"
+            );
+
+
+            updateSchedule();
+
+          }
+        );
+
+      }
+    );
+
+
+    updateSchedule();
+
+  </script>
+
+
+</body>
+
+</html>
