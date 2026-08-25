@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inscripción | CIGMA 2026</title>
+
+  <meta
+    name="description"
+    content="Inscripción al Congreso Interdisciplinario de Geofísica, Meteorología y Astronomía CIGMA 2026."
+  >
+
+  <style>
+
+    /* =========================================
+       COLORES CIGMA
+    ========================================= */
+
+    :root {
+      --marron: #612D1B;
+      --turquesa-oscuro: #00505C;
+      --turquesa: #00788F;
+      --crema: #F5F1EA;
+      --blanco: #FFFFFF;
+      --gris: #5E686A;
+      --negro: #183034;
+    }
+
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--negro);
+      background: var(--crema);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: 0 auto;
+    }
+
+
+    /* =========================================
+       NAVEGACIÓN
+    ========================================= */
+
+    nav {
+      width: 100%;
+      background: var(--turquesa-oscuro);
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 84px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 175px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: var(--blanco);
+
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.72;
+    }
+
+    .nav-links .active {
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--blanco);
+    }
+
+
+    /* =========================================
+       PORTADA
+    ========================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 105px 0 100px;
+
+      color: var(--blanco);
+
+      background:
+
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(0,120,143,0.55),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 5% 100%,
+          rgba(97,45,27,0.75),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          #003D47,
+          #00505C 58%,
+          #173A40
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,0.14);
+
+      right: -180px;
+      top: -260px;
+
+      box-shadow:
+        0 0 0 65px rgba(255,255,255,0.025),
+        0 0 0 130px rgba(255,255,255,0.025);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 820px;
+    }
+
+    .hero-label {
+      display: inline-block;
+
+      margin-bottom: 20px;
+      padding: 7px 14px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 0.95;
+
+      margin-bottom: 22px;
+
+      letter-spacing: -3px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+
+      color: #D8EEF0;
+
+      font-size: clamp(1rem, 2vw, 1.2rem);
+
+      margin-bottom: 30px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-pill {
+      padding: 9px 15px;
+
+      border: 1px solid rgba(255,255,255,0.22);
+
+      background: rgba(255,255,255,0.08);
+
+      border-radius: 30px;
+
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================
+       INFORMACIÓN DE INSCRIPCIÓN
+    ========================================= */
+
+    .registration-info {
+      background: var(--blanco);
+      padding: 105px 0;
+    }
+
+    .registration-grid {
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .section-label {
+      color: var(--turquesa);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .registration-text h2 {
+      color: var(--turquesa-oscuro);
+
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 30px;
+    }
+
+    .registration-text p {
+      color: var(--gris);
+
+      font-size: 1.08rem;
+
+      margin-bottom: 22px;
+    }
+
+    .registration-text strong {
+      color: var(--turquesa-oscuro);
+    }
+
+
+    /* =========================================
+       DATOS DESTACADOS
+    ========================================= */
+
+    .details-box {
+      background: var(--crema);
+
+      border-radius: 10px;
+
+      padding: 40px;
+    }
+
+    .detail {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #D8DEDD;
+    }
+
+    .detail:first-child {
+      padding-top: 0;
+    }
+
+    .detail:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .detail-label {
+      display: block;
+
+      color: var(--marron);
+
+      font-size: 0.72rem;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      color: var(--turquesa-oscuro);
+
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+
+    /* =========================================
+       BOTÓN DE INSCRIPCIÓN
+    ========================================= */
+
+    .form-section {
+      position: relative;
+      overflow: hidden;
+
+      background: var(--turquesa-oscuro);
+
+      color: var(--blanco);
+
+      padding: 110px 0;
+
+      text-align: center;
+    }
+
+    .form-section::before {
+      content: "";
+
+      position: absolute;
+
+      width: 550px;
+      height: 550px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      left: -300px;
+      top: -280px;
+
+      box-shadow:
+        0 0 0 70px rgba(255,255,255,0.02),
+        0 0 0 140px rgba(255,255,255,0.02);
+    }
+
+    .form-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+
+      margin: 0 auto;
+    }
+
+    .form-label {
+      display: inline-block;
+
+      margin-bottom: 18px;
+      padding: 7px 14px;
+
+      border: 1px solid rgba(255,255,255,0.25);
+
+      border-radius: 30px;
+
+      font-size: 0.72rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .form-content h2 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+
+      line-height: 1;
+
+      margin-bottom: 22px;
+    }
+
+    .form-content p {
+      max-width: 620px;
+
+      margin: 0 auto 38px;
+
+      color: #D8EEF0;
+
+      font-size: 1.05rem;
+    }
+
+    .register-button {
+      display: inline-block;
+
+      padding: 21px 42px;
+
+      background: var(--blanco);
+
+      color: var(--turquesa-oscuro);
+
+      border-radius: 7px;
+
+      font-size: 1.05rem;
+      font-weight: 900;
+
+      letter-spacing: 0.5px;
+
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .register-button:hover {
+      transform: translateY(-4px);
+
+      box-shadow: 0 18px 35px rgba(0,0,0,0.2);
+
+      background: #EDF7F7;
+    }
+
+    .free-note {
+      display: block;
+
+      margin-top: 20px;
+
+      color: #AFCED1;
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================================
+       CRONOGRAMA
+    ========================================= */
+
+    .schedule-section {
+      background: var(--crema);
+
+      padding: 100px 0;
+    }
+
+    .schedule-content {
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      text-align: center;
+    }
+
+    .schedule-content h2 {
+      color: var(--turquesa-oscuro);
+
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 20px;
+    }
+
+    .schedule-content p {
+      max-width: 650px;
+
+      margin: 0 auto 30px;
+
+      color: var(--gris);
+
+      font-size: 1.05rem;
+    }
+
+    .schedule-button {
+      display: inline-block;
+
+      padding: 14px 25px;
+
+      background: var(--marron);
+
+      color: var(--blanco);
+
+      border-radius: 6px;
+
+      font-weight: 800;
+
+      transition: transform 0.2s ease;
+    }
+
+    .schedule-button:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      background: #173236;
+
+      color: var(--blanco);
+
+      padding: 50px 0 30px;
+    }
+
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 35px;
+    }
+
+    .footer-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      color: #B8C7C9;
+
+      max-width: 450px;
+
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #D8EEF0;
+
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+
+      padding-top: 20px;
+
+      color: #8EA2A5;
+
+      font-size: 0.75rem;
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .registration-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .registration-info,
+      .form-section,
+      .schedule-section {
+        padding: 75px 0;
+      }
+
+      .details-box {
+        padding: 28px;
+      }
+
+      .register-button {
+        width: 100%;
+
+        padding: 19px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       MENÚ
+  ========================================== -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="./index.html" class="logo">
+
+        <img
+          src="./logo-cigma.png"
+          alt="CIGMA 2026"
+        >
+
+      </a>
+
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="./index.html">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="./inscripcion.html"
+            class="active"
+          >
+            Inscripción
+          </a>
+        </li>
+
+        <li>
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+        </li>
+
+        <li>
+          <a href="./expositores.html">
+            Expositores
+          </a>
+        </li>
+
+        <li>
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================================
+       PORTADA
+  ========================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          CIGMA 2026
+        </span>
+
+        <h1>
+          Inscripción
+        </h1>
+
+        <p class="hero-description">
+
+          Sumate a tres jornadas de ciencia,
+          intercambio y comunidad entre la Geofísica,
+          la Meteorología y la Astronomía.
+
+        </p>
+
+
+        <div class="hero-pills">
+
+          <span class="hero-pill">
+            Inscripción gratuita
+          </span>
+
+          <span class="hero-pill">
+            8 · 9 · 10 de octubre de 2026
+          </span>
+
+          <span class="hero-pill">
+            Planetario UNLP
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       INFORMACIÓN
+  ========================================== -->
+
+  <section class="registration-info">
+
+    <div class="container">
+
+      <div class="registration-grid">
+
+
+        <div class="registration-text">
+
+          <div class="section-label">
+            PARTICIPÁ DE CIGMA
+          </div>
+
+          <h2>
+            Todo listo para encontrarnos
+          </h2>
+
+
+          <p>
+
+            La inscripción a
+            <strong>CIGMA 2026 es gratuita</strong>
+            e incluye el acceso a
+            <strong>
+              todas las actividades del congreso
+              y el kit de acreditación.
+            </strong>
+
+          </p>
+
+
+          <p>
+
+            Durante las jornadas también contaremos con
+            <strong>
+              coffee breaks de desayuno y merienda
+            </strong>,
+            para compartir un momento de encuentro entre
+            las distintas actividades.
+
+          </p>
+
+
+          <p>
+
+            Recomendamos a quienes participen
+            <strong>traer su propio almuerzo.</strong>
+            También estará disponible el
+            <strong>buffet de la Facultad</strong>,
+            que permanecerá abierto durante las jornadas
+            y contará con opciones para comprar allí.
+
+          </p>
+
+        </div>
+
+
+        <div class="details-box">
+
+          <div class="detail">
+
+            <span class="detail-label">
+              INSCRIPCIÓN
+            </span>
+
+            <span class="detail-value">
+              Gratuita
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              INCLUYE
+            </span>
+
+            <span class="detail-value">
+              Todas las actividades + kit de acreditación
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              FECHA
+            </span>
+
+            <span class="detail-value">
+              8, 9 y 10 de octubre de 2026
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="detail-label">
+              LUGAR
+            </span>
+
+            <span class="detail-value">
+              Planetario UNLP · La Plata
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       BOTÓN FORMULARIO
+  ========================================== -->
+
+  <section class="form-section">
+
+    <div class="container">
+
+      <div class="form-content">
+
+        <span class="form-label">
+          INSCRIPCIÓN CIGMA 2026
+        </span>
+
+
+        <h2>
+          Quiero participar
+        </h2>
+
+
+        <p>
+
+          Completá el formulario de inscripción
+          para ser parte de CIGMA 2026.
+
+        </p>
+
+
+        <!--
+          REEMPLAZÁ EL # POR EL LINK
+          DE TU FORMULARIO
+        -->
+
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="register-button"
+        >
+          COMPLETAR FORMULARIO DE INSCRIPCIÓN →
+        </a>
+
+
+        <span class="free-note">
+          La inscripción es completamente gratuita.
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CRONOGRAMA
+  ========================================== -->
+
+  <section class="schedule-section">
+
+    <div class="container">
+
+      <div class="schedule-content">
+
+
+        <div class="section-label">
+          TRES JORNADAS
+        </div>
+
+
+        <h2>
+          ¿Querés saber qué te espera en CIGMA?
+        </h2>
+
+
+        <p>
+
+          Conocé el cronograma completo y empezá
+          a descubrir todo lo que preparamos
+          para estos tres días.
+
+        </p>
+
+
+        <a
+          href="./cronograma.html"
+          class="schedule-button"
+        >
+          CONOCÉ EL CRONOGRAMA →
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-content">
+
+
+        <div>
+
+          <div class="footer-title">
+            CIGMA 2026
+          </div>
+
+          <p class="footer-text">
+
+            Congreso Interdisciplinario de Geofísica,
+            Meteorología y Astronomía.
+
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="./index.html">
+            Inicio
+          </a>
+
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+
+          <a href="./expositores.html">
+            Expositores
+          </a>
+
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 CIGMA · Planetario FCAG – UNLP
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
