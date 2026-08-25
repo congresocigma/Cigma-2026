@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Comité Organizador | CIGMA 2026</title>
+
+  <meta
+    name="description"
+    content="Comité Organizador del Congreso Interdisciplinario de Geofísica, Meteorología y Astronomía CIGMA 2026."
+  >
+
+  <style>
+
+    /* =========================================
+       COLORES CIGMA
+    ========================================= */
+
+    :root {
+      --marron: #612D1B;
+      --turquesa-oscuro: #00505C;
+      --turquesa: #00788F;
+      --crema: #F5F1EA;
+      --blanco: #FFFFFF;
+      --gris: #5E686A;
+      --negro: #183034;
+    }
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--negro);
+      background: var(--crema);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: 0 auto;
+    }
+
+    /* =========================================
+       NAVEGACIÓN
+    ========================================= */
+
+    nav {
+      width: 100%;
+      background: var(--turquesa-oscuro);
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 84px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 175px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--blanco);
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.72;
+    }
+
+    .nav-links .active {
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--blanco);
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 105px 0 100px;
+
+      color: var(--blanco);
+
+      background:
+
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(0,120,143,0.55),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 5% 100%,
+          rgba(97,45,27,0.75),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          #003D47,
+          #00505C 58%,
+          #173A40
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+
+      right: -180px;
+      top: -260px;
+
+      box-shadow:
+        0 0 0 65px rgba(255,255,255,0.025),
+        0 0 0 130px rgba(255,255,255,0.025);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 800px;
+    }
+
+    .hero-label {
+      display: inline-block;
+
+      margin-bottom: 20px;
+      padding: 7px 14px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      line-height: 0.95;
+
+      margin-bottom: 22px;
+
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      color: #D8EEF0;
+
+      font-size: 1.1rem;
+    }
+
+    /* =========================================
+       PRESENTACIÓN
+    ========================================= */
+
+    .intro-section {
+      background: var(--blanco);
+
+      padding: 95px 0 70px;
+    }
+
+    .intro-content {
+      max-width: 820px;
+    }
+
+    .section-label {
+      color: var(--turquesa);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      color: var(--turquesa-oscuro);
+
+      font-size: clamp(2rem, 4vw, 3.3rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 22px;
+    }
+
+    .intro-content p {
+      color: var(--gris);
+
+      font-size: 1.08rem;
+
+      margin-bottom: 16px;
+    }
+
+    .intro-content strong {
+      color: var(--turquesa-oscuro);
+    }
+
+    /* =========================================
+       COMITÉ
+    ========================================= */
+
+    .committee-section {
+      background: var(--crema);
+
+      padding: 60px 0 110px;
+    }
+
+    .committee-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+    }
+
+    .discipline-card {
+      background: var(--blanco);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .discipline-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .discipline-header {
+      color: var(--blanco);
+
+      padding: 32px 30px;
+    }
+
+    .geofisica-header {
+      background: var(--marron);
+    }
+
+    .meteorologia-header {
+      background: var(--turquesa);
+    }
+
+    .astronomia-header {
+      background: var(--turquesa-oscuro);
+    }
+
+    .discipline-header span {
+      display: block;
+
+      font-size: 0.7rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      opacity: 0.78;
+
+      margin-bottom: 8px;
+    }
+
+    .discipline-header h2 {
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .members {
+      padding: 12px 30px 28px;
+    }
+
+    .member {
+      padding: 21px 0;
+
+      border-bottom: 1px solid #E3E8E7;
+    }
+
+    .member:last-child {
+      border-bottom: none;
+    }
+
+    .member-name {
+      color: var(--negro);
+
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .member-area {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--gris);
+
+      font-size: 0.82rem;
+    }
+
+    /* =========================================
+       MENSAJE
+    ========================================= */
+
+    .closing-section {
+      background: var(--turquesa-oscuro);
+
+      color: var(--blanco);
+
+      padding: 95px 0;
+
+      text-align: center;
+    }
+
+    .closing-content {
+      max-width: 760px;
+
+      margin: 0 auto;
+    }
+
+    .closing-content h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 20px;
+    }
+
+    .closing-content p {
+      color: #D8EEF0;
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================================
+       CONTACTO
+    ========================================= */
+
+    .contact-section {
+      background: var(--marron);
+
+      color: var(--blanco);
+
+      padding: 70px 0;
+    }
+
+    .contact-content {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 40px;
+
+      flex-wrap: wrap;
+    }
+
+    .contact-content h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+      margin-bottom: 8px;
+    }
+
+    .contact-content p {
+      color: #ECDDD7;
+    }
+
+    .contact-links {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      padding: 12px 20px;
+
+      border: 1px solid rgba(255,255,255,0.4);
+
+      border-radius: 5px;
+
+      font-weight: 800;
+
+      transition: background 0.2s ease;
+    }
+
+    .contact-button:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      background: #173236;
+
+      color: var(--blanco);
+
+      padding: 50px 0 30px;
+    }
+
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 35px;
+    }
+
+    .footer-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      color: #B8C7C9;
+
+      max-width: 450px;
+
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #D8EEF0;
+
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+
+      padding-top: 20px;
+
+      color: #8EA2A5;
+
+      font-size: 0.75rem;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .committee-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .intro-section {
+        padding: 75px 0 50px;
+      }
+
+      .committee-section {
+        padding: 40px 0 80px;
+      }
+
+      .closing-section {
+        padding: 75px 0;
+      }
+
+      .contact-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================================
+       NAVEGACIÓN
+  ========================================== -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="./index.html" class="logo">
+
+        <img
+          src="./logo-cigma.png"
+          alt="CIGMA 2026"
+        >
+
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="./index.html">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+        </li>
+
+        <li>
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+        </li>
+
+        <li>
+          <a href="./expositores.html">
+            Expositores
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="./comite.html"
+            class="active"
+          >
+            Comité organizador
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          CIGMA 2026
+        </span>
+
+        <h1>
+          Comité Organizador
+        </h1>
+
+        <p>
+          Detrás de CIGMA hay estudiantes de Geofísica,
+          Meteorología y Astronomía que trabajan de manera
+          conjunta para construir este espacio de encuentro.
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- =========================================
+       INTRODUCCIÓN
+  ========================================== -->
+
+  <section class="intro-section">
+
+    <div class="container">
+
+      <div class="intro-content">
+
+        <div class="section-label">
+          QUIÉNES SOMOS
+        </div>
+
+        <h2 class="section-title">
+          Un congreso construido entre estudiantes
+        </h2>
+
+        <p>
+          <strong>CIGMA nace como una iniciativa estudiantil</strong>
+          con la intención de generar un espacio de encuentro entre
+          distintas disciplinas de las Ciencias de la Tierra y el Espacio.
+        </p>
+
+        <p>
+          La organización reúne estudiantes de
+          <strong>Geofísica, Meteorología y Astronomía</strong>,
+          que trabajan de manera colectiva en la planificación,
+          coordinación y desarrollo de las distintas actividades
+          que forman parte del congreso.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       INTEGRANTES
+  ========================================== -->
+
+  <section class="committee-section">
+
+    <div class="container">
+
+      <div class="committee-grid">
+
+        <!-- GEOFÍSICA -->
+
+        <article class="discipline-card">
+
+          <div class="discipline-header geofisica-header">
+
+            <span>
+              Comité Organizador
+            </span>
+
+            <h2>
+              Geofísica
+            </h2>
+
+          </div>
+
+          <div class="members">
+
+            <div class="member">
+
+              <div class="member-name">
+                Magalí Schmitz
+              </div>
+
+              <span class="member-area">
+                Geofísica
+              </span>
+
+            </div>
+
+            <div class="member">
+
+              <div class="member-name">
+                Matías Terpollili
+              </div>
+
+              <span class="member-area">
+                Geofísica
+              </span>
+
+            </div>
+
+            <div class="member">
+
+              <div class="member-name">
+                Mía Moyano
+              </div>
+
+              <span class="member-area">
+                Geofísica
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- METEOROLOGÍA -->
+
+        <article class="discipline-card">
+
+          <div class="discipline-header meteorologia-header">
+
+            <span>
+              Comité Organizador
+            </span>
+
+            <h2>
+              Meteorología
+            </h2>
+
+          </div>
+
+          <div class="members">
+
+            <div class="member">
+
+              <div class="member-name">
+                Uriel Vilaró
+              </div>
+
+              <span class="member-area">
+                Meteorología
+              </span>
+
+            </div>
+
+            <div class="member">
+
+              <div class="member-name">
+                Delfina Barranquero
+              </div>
+
+              <span class="member-area">
+                Meteorología
+              </span>
+
+            </div>
+
+            <div class="member">
+
+              <div class="member-name">
+                Julieta Montefiori
+              </div>
+
+              <span class="member-area">
+                Meteorología
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- ASTRONOMÍA -->
+
+        <article class="discipline-card">
+
+          <div class="discipline-header astronomia-header">
+
+            <span>
+              Comité Organizador
+            </span>
+
+            <h2>
+              Astronomía
+            </h2>
+
+          </div>
+
+          <div class="members">
+
+            <div class="member">
+
+              <div class="member-name">
+                Tomás Cabrera
+              </div>
+
+              <span class="member-area">
+                Astronomía
+              </span>
+
+            </div>
+
+            <div class="member">
+
+              <div class="member-name">
+                Juan Francisco Gómez
+              </div>
+
+              <span class="member-area">
+                Astronomía
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       MENSAJE FINAL
+  ========================================== -->
+
+  <section class="closing-section">
+
+    <div class="container">
+
+      <div class="closing-content">
+
+        <h2>
+          Tres disciplinas, un mismo encuentro.
+        </h2>
+
+        <p>
+          CIGMA se construye desde el trabajo colectivo,
+          el intercambio de ideas y las ganas de generar
+          nuevos espacios para nuestra comunidad.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       CONTACTO
+  ========================================== -->
+
+  <section class="contact-section">
+
+    <div class="container">
+
+      <div class="contact-content">
+
+        <div>
+
+          <h2>
+            ¿Querés contactarnos?
+          </h2>
+
+          <p>
+            Escribinos o seguí las novedades de CIGMA
+            en nuestras redes.
+          </p>
+
+        </div>
+
+        <div class="contact-links">
+
+          <a
+            href="mailto:congreso.cigma@presi.unlp.edu.ar"
+            class="contact-button"
+          >
+            EMAIL
+          </a>
+
+          <a
+            href="https://www.instagram.com/congresocigma/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-button"
+          >
+            INSTAGRAM
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+
+          <div class="footer-title">
+            CIGMA 2026
+          </div>
+
+          <p class="footer-text">
+            Congreso Interdisciplinario de Geofísica,
+            Meteorología y Astronomía.
+          </p>
+
+        </div>
+
+        <div class="footer-links">
+
+          <a href="./index.html">
+            Inicio
+          </a>
+
+          <a href="./inscripcion.html">
+            Inscripción
+          </a>
+
+          <a href="./cronograma.html">
+            Cronograma
+          </a>
+
+          <a href="./expositores.html">
+            Expositores
+          </a>
+
+          <a href="./comite.html">
+            Comité organizador
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 CIGMA · Planetario FCAG – UNLP
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
