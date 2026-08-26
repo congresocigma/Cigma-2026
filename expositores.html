@@ -899,7 +899,157 @@
   }
 
 }
-    
+    /* =========================================
+   INSTITUTOS Y GRUPOS PARTICIPANTES
+========================================= */
+
+.institutes-section {
+  background: #FFFFFF;
+  padding: 100px 0 110px;
+  border-top: 1px solid #E3E8E7;
+}
+
+.institutes-header {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+.institutes-header .section-title {
+  margin-bottom: 15px;
+}
+
+.institutes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+
+/* =========================================
+   ETIQUETA INSTITUTOS
+========================================= */
+
+.instituto {
+  background: #445A5E;
+}
+
+
+/* =========================================
+   TARJETAS PENDIENTES
+========================================= */
+
+.institute-pending-card {
+  background: var(--crema);
+
+  border: 1px solid #DDE4E3;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  min-height: 100%;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.institute-pending-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.07);
+}
+
+.institute-logo-area {
+  height: 220px;
+
+  background: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+}
+
+.institute-logo-area img {
+  max-width: 190px;
+  max-height: 110px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.institute-pending-info {
+  padding: 24px;
+}
+
+.institute-pending-info h3 {
+  color: var(--turquesa-oscuro);
+
+  font-size: 1.35rem;
+
+  margin-bottom: 7px;
+}
+
+.institute-pending-info p {
+  color: var(--gris);
+
+  font-size: 0.9rem;
+}
+
+.pending-label {
+  display: inline-block;
+
+  margin-top: 14px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #E7DDCF;
+
+  color: #745841;
+
+  font-size: 0.67rem;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   RESPONSIVE INSTITUTOS
+========================================= */
+
+@media (max-width: 950px) {
+
+  .institutes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .institutes-section {
+    padding: 75px 0;
+  }
+
+  .institutes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institute-logo-area {
+    height: 180px;
+  }
+
+}
   </style>
 
 </head>
