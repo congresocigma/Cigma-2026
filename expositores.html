@@ -781,6 +781,125 @@
   }
 
 }
+
+
+
+/* =========================================
+   INSTITUTOS Y GRUPOS
+========================================= */
+
+.institutes-section {
+  background: var(--blanco);
+  padding: 100px 0 110px;
+}
+
+.institutes-header {
+  max-width: 760px;
+  margin-bottom: 50px;
+}
+
+.institutes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.institute-card {
+  min-height: 180px;
+
+  background: var(--crema);
+
+  border: 1px solid #E0E6E5;
+  border-radius: 12px;
+
+  padding: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,0.08);
+
+  background: #FFFFFF;
+}
+
+.institute-card img {
+  max-width: 190px;
+  max-height: 100px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* PARA INSTITUTOS SIN LOGO TODAVÍA */
+
+.institute-placeholder {
+  text-align: center;
+
+  color: var(--turquesa-oscuro);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+  .institutes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .institutes-section {
+    padding: 75px 0;
+  }
+
+  .institutes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .institute-card {
+    min-height: 135px;
+    padding: 18px;
+  }
+
+  .institute-card img {
+    max-width: 130px;
+    max-height: 75px;
+  }
+
+  .institute-placeholder {
+    font-size: 1rem;
+  }
+
+}
+    
   </style>
 
 </head>
