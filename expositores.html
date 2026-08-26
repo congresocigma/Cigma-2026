@@ -340,16 +340,22 @@
       justify-content: center;
     }
 
-    .modal-content {
-      width: min(850px, 100%);
-      background: var(--blanco);
+   .modal-content {
+  position: relative;
 
-      border-radius: 14px;
-      overflow: hidden;
+  width: min(760px, 90vw);
+  max-height: 85vh;
 
-      position: relative;
-    }
+  background: #FFFFFF;
 
+  border-radius: 14px;
+
+  padding: 38px;
+
+  overflow-y: auto;
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+}
     .modal-close {
       position: absolute;
 
