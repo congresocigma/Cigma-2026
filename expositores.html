@@ -900,22 +900,19 @@
 
 }
     /* =========================================
+ /* =========================================
    INSTITUTOS Y GRUPOS PARTICIPANTES
 ========================================= */
 
 .institutes-section {
   background: #FFFFFF;
-  padding: 100px 0 110px;
+  padding: 105px 0 115px;
   border-top: 1px solid #E3E8E7;
 }
 
 .institutes-header {
-  max-width: 780px;
-  margin-bottom: 48px;
-}
-
-.institutes-header .section-title {
-  margin-bottom: 15px;
+  max-width: 800px;
+  margin-bottom: 50px;
 }
 
 .institutes-grid {
@@ -926,94 +923,157 @@
 
 
 /* =========================================
-   ETIQUETA INSTITUTOS
+   TARJETA DEL INSTITUTO
 ========================================= */
 
-.instituto {
-  background: #445A5E;
-}
-
-
-/* =========================================
-   TARJETAS PENDIENTES
-========================================= */
-
-.institute-pending-card {
+.institute-card {
   background: var(--crema);
 
-  border: 1px solid #DDE4E3;
-  border-radius: 12px;
-
+  border-radius: 14px;
   overflow: hidden;
 
-  min-height: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+  cursor: pointer;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.institute-pending-card:hover {
-  transform: translateY(-5px);
+.institute-card:hover {
+  transform: translateY(-6px);
 
   box-shadow:
-    0 14px 30px rgba(0,0,0,0.07);
+    0 17px 38px rgba(0,0,0,0.11);
 }
 
-.institute-logo-area {
-  height: 220px;
+
+/* =========================================
+   IMAGEN ALTERNADA
+========================================= */
+
+.institute-visual {
+  position: relative;
+
+  width: 100%;
+  height: 285px;
+
+  overflow: hidden;
 
   background: #FFFFFF;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 35px;
 }
 
-.institute-logo-area img {
-  max-width: 190px;
-  max-height: 110px;
 
-  width: auto;
-  height: auto;
+/* LOGO */
+
+.institute-logo-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
 
   object-fit: contain;
+
+  padding: 48px;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
-.institute-pending-info {
-  padding: 24px;
+
+/* FOTO */
+
+.institute-person-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 20%;
+
+  opacity: 0;
+
+  transform: scale(1.03);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
-.institute-pending-info h3 {
+
+/* CUANDO CAMBIA */
+
+.institute-card.show-person .institute-logo-image {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.institute-card.show-person .institute-person-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.institute-info {
+  padding: 27px 26px 29px;
+}
+
+
+/* NOMBRE DEL INSTITUTO */
+
+.institute-name {
   color: var(--turquesa-oscuro);
 
-  font-size: 1.35rem;
+  font-size: 1.65rem;
+  line-height: 1.05;
 
-  margin-bottom: 7px;
+  font-weight: 900;
+
+  margin-bottom: 9px;
 }
 
-.institute-pending-info p {
+
+/* PERSONA */
+
+.institute-person {
+  color: var(--negro);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  margin-bottom: 16px;
+}
+
+
+/* TEXTO */
+
+.institute-description {
   color: var(--gris);
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+
+  margin-bottom: 18px;
 }
 
-.pending-label {
-  display: inline-block;
 
-  margin-top: 14px;
+.institute-more {
+  color: var(--marron);
 
-  padding: 6px 10px;
-
-  border-radius: 20px;
-
-  background: #E7DDCF;
-
-  color: #745841;
-
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 900;
 
   letter-spacing: 1px;
@@ -1023,7 +1083,33 @@
 
 
 /* =========================================
-   RESPONSIVE INSTITUTOS
+   ETIQUETA
+========================================= */
+
+.institute-tag {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #445A5E;
+
+  color: #FFFFFF;
+
+  font-size: 0.65rem;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 950px) {
@@ -1045,16 +1131,16 @@
     grid-template-columns: 1fr;
   }
 
-  .institute-logo-area {
-    height: 180px;
+  .institute-visual {
+    height: 300px;
+  }
+
+  .institute-name {
+    font-size: 1.55rem;
   }
 
 }
-  </style>
 
-</head>
-
-<body>
 
   <!-- =========================
        NAVEGACIÓN
