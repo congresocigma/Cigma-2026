@@ -782,125 +782,7 @@
 
 }
 
-
-
 /* =========================================
-   INSTITUTOS Y GRUPOS
-========================================= */
-
-.institutes-section {
-  background: var(--blanco);
-  padding: 100px 0 110px;
-}
-
-.institutes-header {
-  max-width: 760px;
-  margin-bottom: 50px;
-}
-
-.institutes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.institute-card {
-  min-height: 180px;
-
-  background: var(--crema);
-
-  border: 1px solid #E0E6E5;
-  border-radius: 12px;
-
-  padding: 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.institute-card:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 14px 30px rgba(0,0,0,0.08);
-
-  background: #FFFFFF;
-}
-
-.institute-card img {
-  max-width: 190px;
-  max-height: 100px;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-
-  display: block;
-}
-
-
-/* PARA INSTITUTOS SIN LOGO TODAVÍA */
-
-.institute-placeholder {
-  text-align: center;
-
-  color: var(--turquesa-oscuro);
-
-  font-size: 1.25rem;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-}
-
-
-/* TABLET */
-
-@media (max-width: 950px) {
-
-  .institutes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-
-/* CELULAR */
-
-@media (max-width: 700px) {
-
-  .institutes-section {
-    padding: 75px 0;
-  }
-
-  .institutes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .institute-card {
-    min-height: 135px;
-    padding: 18px;
-  }
-
-  .institute-card img {
-    max-width: 130px;
-    max-height: 75px;
-  }
-
-  .institute-placeholder {
-    font-size: 1rem;
-  }
-
-}
-    /* =========================================
- /* =========================================
    INSTITUTOS Y GRUPOS PARTICIPANTES
 ========================================= */
 
@@ -923,7 +805,7 @@
 
 
 /* =========================================
-   TARJETA DEL INSTITUTO
+   TARJETA
 ========================================= */
 
 .institute-card {
@@ -950,7 +832,7 @@
 
 
 /* =========================================
-   IMAGEN ALTERNADA
+   LOGO + FOTO
 ========================================= */
 
 .institute-visual {
@@ -977,9 +859,11 @@
 
   object-fit: contain;
 
-  padding: 48px;
+  padding: 45px;
 
   opacity: 1;
+
+  transform: scale(1);
 
   transition:
     opacity 0.8s ease,
@@ -987,7 +871,7 @@
 }
 
 
-/* FOTO */
+/* FOTO DEL EXPOSITOR */
 
 .institute-person-image {
   position: absolute;
@@ -1002,7 +886,7 @@
 
   opacity: 0;
 
-  transform: scale(1.03);
+  transform: scale(1.04);
 
   transition:
     opacity 0.8s ease,
@@ -1010,7 +894,7 @@
 }
 
 
-/* CUANDO CAMBIA */
+/* CAMBIO ENTRE LOGO Y FOTO */
 
 .institute-card.show-person .institute-logo-image {
   opacity: 0;
@@ -1028,68 +912,42 @@
 ========================================= */
 
 .institute-info {
-  padding: 27px 26px 29px;
+  padding: 27px 26px 30px;
 }
 
 
-/* NOMBRE DEL INSTITUTO */
+/* NOMBRE DEL INSTITUTO GRANDE */
 
 .institute-name {
   color: var(--turquesa-oscuro);
 
-  font-size: 1.65rem;
+  font-size: 1.9rem;
   line-height: 1.05;
 
   font-weight: 900;
 
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 
-/* PERSONA */
+/* NOMBRE DEL EXPOSITOR */
 
 .institute-person {
   color: var(--negro);
 
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-
-  margin-bottom: 16px;
-}
-
-
-/* TEXTO */
-
-.institute-description {
-  color: var(--gris);
-
-  font-size: 0.88rem;
-  line-height: 1.5;
 
   margin-bottom: 18px;
 }
 
 
-.institute-more {
-  color: var(--marron);
-
-  font-size: 0.75rem;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================
-   ETIQUETA
-========================================= */
+/* ETIQUETA */
 
 .institute-tag {
   display: inline-block;
 
-  margin-bottom: 12px;
+  margin-bottom: 13px;
 
   padding: 5px 10px;
 
@@ -1105,6 +963,62 @@
   letter-spacing: 1px;
 
   text-transform: uppercase;
+}
+
+
+/* LINK */
+
+.institute-more {
+  color: var(--marron);
+
+  font-size: 0.75rem;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TARJETAS SIN REPRESENTANTE
+========================================= */
+
+.institute-card.pending {
+  cursor: default;
+}
+
+.institute-card.pending:hover {
+  transform: none;
+}
+
+.institute-card.pending .institute-visual {
+  height: 285px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.institute-card.pending .institute-logo-image {
+  position: static;
+
+  max-width: 220px;
+  max-height: 130px;
+
+  width: auto;
+  height: auto;
+
+  padding: 0;
+
+  opacity: 1;
+}
+
+.pending-text {
+  color: var(--gris);
+
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 
@@ -1136,12 +1050,19 @@
   }
 
   .institute-name {
-    font-size: 1.55rem;
+    font-size: 1.7rem;
   }
 
 }
 
 
+    </style>
+
+</head>
+
+<body>
+
+  
   <!-- =========================
        NAVEGACIÓN
   ========================= -->
