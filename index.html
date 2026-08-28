@@ -1103,6 +1103,7 @@
 .cigma-intro.hide {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 
@@ -2210,29 +2211,29 @@
 
   <script>
 
-  window.addEventListener("load", () => {
+<script>
+  const cigmaIntro = document.getElementById("cigma-intro");
 
-    const cigmaIntro =
-      document.getElementById("cigma-intro");
+  if (cigmaIntro) {
 
-    if (!cigmaIntro) return;
-
-
+    // Después de 2,2 segundos empieza a desaparecer
     setTimeout(() => {
-
       cigmaIntro.classList.add("hide");
-
     }, 2200);
 
-
+    // Después se elimina completamente
     setTimeout(() => {
-
       cigmaIntro.remove();
+    }, 3200);
 
-    }, 3100);
+    // Seguridad: si algo falla, nunca queda trabada
+    setTimeout(() => {
+      if (document.body.contains(cigmaIntro)) {
+        cigmaIntro.remove();
+      }
+    }, 5000);
 
-  });
-
+  }
 </script>
 </body>
 </html>
