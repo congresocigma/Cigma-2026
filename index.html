@@ -1145,7 +1145,7 @@
 }
 
 /* APARICIÓN DEL LOGO */
-
+    
 @keyframes introLogo {
 
   from {
@@ -1159,7 +1159,6 @@
   }
 
 }
-
 
 /* CELULAR */
 
@@ -2151,32 +2150,34 @@
 
   if (cigmaIntro) {
 
+    const introLogo =
+      cigmaIntro.querySelector(".cigma-intro-logo");
+
+
+    setTimeout(() => {
+
+      introLogo.style.opacity = "0";
+      introLogo.style.transform = "scale(1.08)";
+
+    }, 1800);
+
+
     setTimeout(() => {
 
       cigmaIntro.classList.add("hide");
 
-    }, 2200);
+    }, 2300);
 
 
     setTimeout(() => {
 
       cigmaIntro.remove();
 
-    }, 3200);
-
-
-    setTimeout(() => {
-
-      if (document.body.contains(cigmaIntro)) {
-
-        cigmaIntro.remove();
-
-      }
-
-    }, 5000);
+    }, 3300);
 
   }
 
+</script>
 </script>
 </body>
 </html>
