@@ -1065,9 +1065,211 @@
       }
     }
 
+/* =========================================
+   INTRO CIGMA
+========================================= */
+
+.cigma-intro {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(0,120,143,0.35),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #003D47,
+      #00505C 58%,
+      #173A40
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+
+.cigma-intro.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* CONTENIDO */
+
+.cigma-intro-content {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 34px;
+}
+
+
+/* PALABRAS */
+
+.cigma-intro-words {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #FFFFFF;
+
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 900;
+
+  letter-spacing: 4px;
+
+  line-height: 1.05;
+}
+
+
+.cigma-intro-words span {
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation:
+    introWord 0.55s ease forwards;
+}
+
+
+.cigma-intro-words span:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.cigma-intro-words span:nth-child(2) {
+  animation-delay: 0.45s;
+}
+
+.cigma-intro-words span:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+
+/* LOGO */
+
+.cigma-intro-logo {
+  width: min(380px, 72vw);
+
+  height: auto;
+
+  opacity: 0;
+
+  transform: scale(0.88);
+
+  animation:
+    introLogo 0.75s ease forwards;
+
+  animation-delay: 1.15s;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes introWord {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes introLogo {
+
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .cigma-intro-content {
+    gap: 26px;
+  }
+
+  .cigma-intro-words {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+  }
+
+  .cigma-intro-logo {
+    width: 250px;
+  }
+
+}
+
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cigma-intro-words span,
+  .cigma-intro-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
+    
   </style>
 </head>
+<script>
 
+  const cigmaIntro =
+    document.getElementById("cigma-intro");
+
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+      cigmaIntro.classList.add("hide");
+
+    }, 2200);
+
+
+    setTimeout(() => {
+
+      cigmaIntro.remove();
+
+    }, 3100);
+
+  });
+
+</script>
 <body>
 
   <!-- =========================================
