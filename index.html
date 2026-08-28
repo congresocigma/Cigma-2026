@@ -1130,13 +1130,19 @@
   height: auto;
 
   opacity: 0;
-
   transform: scale(0.88);
 
-  animation:
-    introLogo 1s ease forwards;
+  animation: introLogo 1s ease forwards;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
+  .cigma-intro.hide .cigma-intro-logo {
+  opacity: 0 !important;
+  transform: scale(1.08) !important;
+}
 
 /* APARICIÓN DEL LOGO */
 
