@@ -2141,8 +2141,6 @@
 
 </script>
 
-  <script>
-
 <script>
 
   const cigmaIntro =
@@ -2150,34 +2148,20 @@
 
   if (cigmaIntro) {
 
-    const introLogo =
-      cigmaIntro.querySelector(".cigma-intro-logo");
-
+    setTimeout(() => {
+      cigmaIntro.classList.add("logo-out");
+    }, 1700);
 
     setTimeout(() => {
-
-      introLogo.style.opacity = "0";
-      introLogo.style.transform = "scale(1.08)";
-
-    }, 1800);
-
-
-    setTimeout(() => {
-
       cigmaIntro.classList.add("hide");
-
-    }, 2300);
-
+    }, 2400);
 
     setTimeout(() => {
-
       cigmaIntro.remove();
-
-    }, 3300);
+    }, 3400);
 
   }
 
-</script>
 </script>
 </body>
 </html>
